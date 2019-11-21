@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView_Nhom = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Nhom)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView_Nhom
@@ -37,18 +39,27 @@
             this.dataGridView_Nhom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Nhom.Location = new System.Drawing.Point(3, 3);
             this.dataGridView_Nhom.Name = "dataGridView_Nhom";
-            this.dataGridView_Nhom.Size = new System.Drawing.Size(546, 306);
+            this.dataGridView_Nhom.Size = new System.Drawing.Size(734, 413);
             this.dataGridView_Nhom.TabIndex = 0;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.dataGridView_Nhom);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(747, 416);
+            this.flowLayoutPanel1.TabIndex = 1;
             // 
             // US_dsNhom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dataGridView_Nhom);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "US_dsNhom";
-            this.Size = new System.Drawing.Size(552, 312);
+            this.Size = new System.Drawing.Size(753, 422);
             this.Load += new System.EventHandler(this.US_dsNhom_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Nhom)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -56,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView_Nhom;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
