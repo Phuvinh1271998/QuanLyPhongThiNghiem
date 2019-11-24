@@ -43,15 +43,16 @@ namespace QuanLy_DoAn_TNTH
         {
             string id = txtTenDN.Text;
             string mk = txtMatKhau.Text;
+            string server = "DESKTOP-AU0H4GF";
             if (id == "" | mk == "")
                 MessageBox.Show("Fill all fields !");
-            else if (!IsServerConnected($"Data Source=DESKTOP-AU0H4GF;Initial Catalog=DAMH;User ID={id};Password={mk}"))
+            else if (!IsServerConnected($"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }"))
             {
                 MessageBox.Show("Login failed !");
             }
             else
             {
-                SqlConnection con = new SqlConnection($"Data Source=DESKTOP-AU0H4GF;Initial Catalog=DAMH;User ID={id};Password={mk}");
+                SqlConnection con = new SqlConnection($"Data Source={server};Initial Catalog=DAMH;User ID={id};Password={mk}");
                 F_Main main = new F_Main();
                 main.Show();
                 this.Visible = false;
@@ -74,8 +75,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void F_DangNhap_Load(object sender, EventArgs e)
         {
-            string conn = ConfigurationManager.ConnectionStrings.ToString();
-            ConnVal(conn);
+
         }
     }
 }
