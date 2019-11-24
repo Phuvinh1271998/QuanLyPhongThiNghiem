@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace QuanLy_DoAn_TNTH
 {
@@ -17,11 +19,43 @@ namespace QuanLy_DoAn_TNTH
             InitializeComponent();
         }
 
+        private static bool IsServerConnected(string connectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    return false;
+                }
+            }
+        }
+
+        public static string ConnVal(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
+        }
         private void btDangNhap_Click(object sender, EventArgs e)
         {
-            F_Main main = new F_Main();
-            main.Show();
-            this.Visible = false;
+            string id = txtTenDN.Text;
+            string mk = txtMatKhau.Text;
+            if (id == "" | mk == "")
+                MessageBox.Show("Fill all fields !");
+            else if (!IsServerConnected($"Data Source=DESKTOP-AU0H4GF;Initial Catalog=DAMH;User ID={id};Password={mk}"))
+            {
+                MessageBox.Show("Login failed !");
+            }
+            else
+            {
+                SqlConnection con = new SqlConnection($"Data Source=DESKTOP-AU0H4GF;Initial Catalog=DAMH;User ID={id};Password={mk}");
+                F_Main main = new F_Main();
+                main.Show();
+                this.Visible = false;
+            }
         }
 
         private void F_DangNhap_FormClosing(object sender, FormClosingEventArgs e)
@@ -36,6 +70,12 @@ namespace QuanLy_DoAn_TNTH
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void F_DangNhap_Load(object sender, EventArgs e)
+        {
+            string conn = ConfigurationManager.ConnectionStrings.ToString();
+            ConnVal(conn);
         }
     }
 }
