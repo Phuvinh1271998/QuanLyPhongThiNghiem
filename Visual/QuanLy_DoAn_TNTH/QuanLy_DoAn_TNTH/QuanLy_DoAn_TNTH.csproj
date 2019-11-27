@@ -124,6 +124,12 @@
     <Compile Include="US_dkPhongThiNghiem.Designer.cs">
       <DependentUpon>US_dkPhongThiNghiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="US_dsHoaChat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_dsHoaChat.Designer.cs">
+      <DependentUpon>US_dsHoaChat.cs</DependentUpon>
+    </Compile>
     <Compile Include="US_dsNhom.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="US_dkPhongThiNghiem.resx">
       <DependentUpon>US_dkPhongThiNghiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="US_dsHoaChat.resx">
+      <DependentUpon>US_dsHoaChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_dsNhom.resx">
       <DependentUpon>US_dsNhom.cs</DependentUpon>
