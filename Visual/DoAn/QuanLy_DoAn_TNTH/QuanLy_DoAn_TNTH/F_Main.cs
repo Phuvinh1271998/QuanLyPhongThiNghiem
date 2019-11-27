@@ -104,5 +104,38 @@ namespace QuanLy_DoAn_TNTH
             }
             US_dsThietBi.Instance.BringToFront();
         }
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(US_dsDeTai.Instance))
+            {
+                this.Controls.Add(US_dsDeTai.Instance);
+                US_dsDeTai.Instance.Dock = DockStyle.Fill;
+                US_dsDeTai.Instance.BringToFront();
+            }
+            US_dsDeTai.Instance.BringToFront();
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(US_dsGVHD.Instance))
+            {
+                this.Controls.Add(US_dsGVHD.Instance);
+                US_dsGVHD.Instance.Dock = DockStyle.Fill;
+                US_dsGVHD.Instance.BringToFront();
+            }
+            US_dsGVHD.Instance.BringToFront();
+        }
+
+        private void barButtonItem37_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(US_themSV.Instance))
+            {
+                this.Controls.Add(US_themSV.Instance);
+                US_themSV.Instance.Dock = DockStyle.Fill;
+                US_themSV.Instance.BringToFront();
+            }
+            US_themSV.Instance.BringToFront();
+        }
     }
 }

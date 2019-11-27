@@ -87,11 +87,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAMH.designer.cs">
+    <Compile Include="DAMH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DAMH.dbml</DependentUpon>
+      <DependentUpon>DAMH.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBSQLServerUtils.cs" />
+    <Compile Include="DBUtils.cs" />
     <Compile Include="F_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +132,18 @@
     <Compile Include="US_dkPTN.Designer.cs">
       <DependentUpon>US_dkPTN.cs</DependentUpon>
     </Compile>
+    <Compile Include="US_dsDeTai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_dsDeTai.Designer.cs">
+      <DependentUpon>US_dsDeTai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="US_dsGVHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_dsGVHD.Designer.cs">
+      <DependentUpon>US_dsGVHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="US_dsHoaChat.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +167,12 @@
     </Compile>
     <Compile Include="US_dsThietBi.Designer.cs">
       <DependentUpon>US_dsThietBi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="US_themSV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_themSV.Designer.cs">
+      <DependentUpon>US_themSV.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="F_DangNhap.resx">
       <DependentUpon>F_DangNhap.cs</DependentUpon>
@@ -183,6 +203,12 @@
     <EmbeddedResource Include="US_dkPTN.resx">
       <DependentUpon>US_dkPTN.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="US_dsDeTai.resx">
+      <DependentUpon>US_dsDeTai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="US_dsGVHD.resx">
+      <DependentUpon>US_dsGVHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="US_dsHoaChat.resx">
       <DependentUpon>US_dsHoaChat.cs</DependentUpon>
     </EmbeddedResource>
@@ -195,13 +221,19 @@
     <EmbeddedResource Include="US_dsThietBi.resx">
       <DependentUpon>US_dsThietBi.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DAMH.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DAMH.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="US_themSV.resx">
+      <DependentUpon>US_themSV.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DAMH.xsc">
+      <DependentUpon>DAMH.xsd</DependentUpon>
     </None>
-    <None Include="DAMH.dbml.layout">
-      <DependentUpon>DAMH.dbml</DependentUpon>
+    <None Include="DAMH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DAMH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DAMH.xss">
+      <DependentUpon>DAMH.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

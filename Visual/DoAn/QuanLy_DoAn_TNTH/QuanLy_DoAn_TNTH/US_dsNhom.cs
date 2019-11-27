@@ -28,8 +28,7 @@ namespace QuanLy_DoAn_TNTH
         }
         private void US_dsNhom_Load(object sender, EventArgs e)
         {
-            DAMHDataContext db = new DAMHDataContext();
-            dataGridView_Nhom.DataSource = db.NhomSVs;
+
         }
     }
 }
