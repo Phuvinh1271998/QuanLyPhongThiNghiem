@@ -59,7 +59,9 @@ namespace QuanLy_DoAn_TNTH
             cbbTenGVQL.ValueMember = "MaGVQL";
             cbbTenGVQL.DataSource = dt;
             sql.Close();
-
+            txtMaDK_HCDC.Enabled = false;
+            txtMaGVQL.Enabled = false;
+            txtTenNhom.Enabled = false;
             LoaddataGridView();
         }
 
@@ -162,6 +164,7 @@ namespace QuanLy_DoAn_TNTH
             else if (!exedata($"insert into DK_HoaChat values('{MDKHCDC}','{MHC}',{sl})"))
                 MessageBox.Show("Có Lỗi (DK_HoaChat)!");
 
+            MessageBox.Show("Thêm thành công");
             LoaddataGridView();
         }
 
@@ -183,6 +186,7 @@ namespace QuanLy_DoAn_TNTH
             txtSoLuong.Text = dataGridView[5, e.RowIndex].Value.ToString();
             txtMaGVQL.Text = dataGridView[2, e.RowIndex].Value.ToString();
             cbbTenHC.Text = dataGridView[4, e.RowIndex].Value.ToString();
+            txtMaDK_HCDC.Text = dataGridView[0, e.RowIndex].Value.ToString();
         }
 
         public void LoaddataGridView()
@@ -204,12 +208,14 @@ namespace QuanLy_DoAn_TNTH
             if (dr == DialogResult.Yes)
             {
                 SqlConnection sql = DBUtils.GetDBConnection();
-                SqlCommand cmd = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '"+dataGridView.)+"'", sql);
-
-                foreach (DataGridViewRow item in this.dataGridView.SelectedRows)
-                {
-                    dataGridView.Rows.RemoveAt(item.Index);
-                }
+                sql.Open();
+                SqlCommand cmd1 = new SqlCommand("delete from DK_HOACHAT where MaDK_HCDC = '"+dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString()+"'", sql);
+                cmd1.ExecuteNonQuery();
+                SqlCommand cmd2 = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
+                cmd2.ExecuteNonQuery();
+                sql.Close();
+                MessageBox.Show("Xóa thành công");
+                LoaddataGridView();
             }
         }
 
@@ -217,11 +223,16 @@ namespace QuanLy_DoAn_TNTH
         {
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
-            SqlCommand cmd = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaGVHD='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + dataGridView.Rows[0].ToString()+ "'", sql);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            dataGridView.DataSource = cmd.ExecuteNonQuery();
-            sql.Close();
 
+            SqlCommand cmd3 = new SqlCommand("update DK_HOACHAT set SoLuong_HC = '"+txtSoLuong.Text+"' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+            cmd3.ExecuteNonQuery();
+
+            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" +txtMaDK_HCDC.Text+ "'", sql);
+            cmd2.ExecuteNonQuery();
+
+            MessageBox.Show("Sửa thành công");
+            sql.Close();
+            LoaddataGridView();
         }
     }
 }

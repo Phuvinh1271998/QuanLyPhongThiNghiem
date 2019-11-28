@@ -35,18 +35,20 @@ namespace QuanLy_DoAn_TNTH
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMaDK_HCDC = new System.Windows.Forms.TextBox();
+            this.btSua = new System.Windows.Forms.Button();
+            this.btXoa = new System.Windows.Forms.Button();
+            this.txtMaGVQL = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenNhom = new System.Windows.Forms.TextBox();
             this.cbbMaNhom = new System.Windows.Forms.ComboBox();
             this.cbbTenHC = new System.Windows.Forms.ComboBox();
             this.txtMaHC = new System.Windows.Forms.TextBox();
             this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMaGVQL = new System.Windows.Forms.TextBox();
-            this.btXoa = new System.Windows.Forms.Button();
-            this.btSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -108,6 +110,8 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.label8);
+            this.groupControl2.Controls.Add(this.txtMaDK_HCDC);
             this.groupControl2.Controls.Add(this.btSua);
             this.groupControl2.Controls.Add(this.btXoa);
             this.groupControl2.Controls.Add(this.txtMaGVQL);
@@ -126,7 +130,80 @@ namespace QuanLy_DoAn_TNTH
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(617, 245);
             this.groupControl2.TabIndex = 18;
-            this.groupControl2.Text = "Mã GVQL";
+            this.groupControl2.Text = "Đăng ký hóa chất";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(352, 159);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(62, 13);
+            this.label8.TabIndex = 30;
+            this.label8.Text = "Mã đăng ký";
+            // 
+            // txtMaDK_HCDC
+            // 
+            this.txtMaDK_HCDC.Location = new System.Drawing.Point(437, 156);
+            this.txtMaDK_HCDC.Name = "txtMaDK_HCDC";
+            this.txtMaDK_HCDC.Size = new System.Drawing.Size(157, 21);
+            this.txtMaDK_HCDC.TabIndex = 24;
+            // 
+            // btSua
+            // 
+            this.btSua.Location = new System.Drawing.Point(244, 192);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(75, 39);
+            this.btSua.TabIndex = 29;
+            this.btSua.TabStop = false;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.Location = new System.Drawing.Point(143, 192);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(75, 39);
+            this.btXoa.TabIndex = 28;
+            this.btXoa.TabStop = false;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // txtMaGVQL
+            // 
+            this.txtMaGVQL.Location = new System.Drawing.Point(104, 109);
+            this.txtMaGVQL.Name = "txtMaGVQL";
+            this.txtMaGVQL.Size = new System.Drawing.Size(147, 21);
+            this.txtMaGVQL.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Mã GVQL";
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(104, 156);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(147, 21);
+            this.txtSoLuong.TabIndex = 24;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(41, 192);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 39);
+            this.button1.TabIndex = 25;
+            this.button1.TabStop = false;
+            this.button1.Text = "Thêm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 
@@ -178,63 +255,6 @@ namespace QuanLy_DoAn_TNTH
             this.cbbTenGVQL.TabIndex = 23;
             this.cbbTenGVQL.SelectedIndexChanged += new System.EventHandler(this.cbbTenGVQL_SelectedIndexChanged);
             // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(104, 156);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(147, 21);
-            this.txtSoLuong.TabIndex = 24;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(41, 192);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 39);
-            this.button1.TabIndex = 25;
-            this.button1.TabStop = false;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(5, 112);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Mã GVQL";
-            // 
-            // txtMaGVQL
-            // 
-            this.txtMaGVQL.Location = new System.Drawing.Point(104, 109);
-            this.txtMaGVQL.Name = "txtMaGVQL";
-            this.txtMaGVQL.Size = new System.Drawing.Size(147, 21);
-            this.txtMaGVQL.TabIndex = 27;
-            // 
-            // btXoa
-            // 
-            this.btXoa.Location = new System.Drawing.Point(143, 192);
-            this.btXoa.Name = "btXoa";
-            this.btXoa.Size = new System.Drawing.Size(75, 39);
-            this.btXoa.TabIndex = 28;
-            this.btXoa.TabStop = false;
-            this.btXoa.Text = "Xóa";
-            this.btXoa.UseVisualStyleBackColor = true;
-            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
-            // 
-            // btSua
-            // 
-            this.btSua.Location = new System.Drawing.Point(244, 192);
-            this.btSua.Name = "btSua";
-            this.btSua.Size = new System.Drawing.Size(75, 39);
-            this.btSua.TabIndex = 29;
-            this.btSua.TabStop = false;
-            this.btSua.Text = "Sửa";
-            this.btSua.UseVisualStyleBackColor = true;
-            this.btSua.Click += new System.EventHandler(this.btSua_Click);
-            // 
             // US_dkHoaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -277,5 +297,7 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btXoa;
         private System.Windows.Forms.Button btSua;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtMaDK_HCDC;
     }
 }

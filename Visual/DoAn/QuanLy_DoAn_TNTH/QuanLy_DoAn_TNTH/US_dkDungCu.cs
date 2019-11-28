@@ -26,5 +26,10 @@ namespace QuanLy_DoAn_TNTH
                 return _instance;
             }
         }
+
+        private void cbbMaNhom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
