@@ -35,25 +35,26 @@ namespace QuanLy_DoAn_TNTH
             }
         }
 
-        public static string ConnVal(string name)
-        {
-            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
-        }
+        
+        public static string SetValueForConn = "";
         private void btDangNhap_Click(object sender, EventArgs e)
         {
             string id = txtTenDN.Text;
             string mk = txtMatKhau.Text;
-            string server = "DESKTOP-UKGCLUB\\VINHLEPC";
+            string server = "DESKTOP-AU0H4GF";
+            string conn = $"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }";
             if (id == "" | mk == "")
                 MessageBox.Show("Fill all fields !");
-            else if (!IsServerConnected($"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }"))
+            else if (!IsServerConnected(conn))
             {
                 MessageBox.Show("Login failed !");
             }
             else
             {
-                SqlConnection con = new SqlConnection($"Data Source={server};Initial Catalog=DAMH;User ID={id};Password={mk}");
-                this.Visible = false;               
+                SetValueForConn = conn;
+                F_Main main = new F_Main();
+                main.Show();
+                this.Visible = false;
             }
         }
 
