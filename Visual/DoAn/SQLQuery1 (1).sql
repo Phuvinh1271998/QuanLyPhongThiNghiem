@@ -717,3 +717,5 @@ go
 exec DKPTN '4/1/2020','B1','TP09','GVQL01','THTH','PTN01','TB04';
 go
 exec DKPTN '4/1/2020','B1','TP10','GVQL01','THTH','PTN01','TB03';
+
+update DK_HCDC set MaNhom = 'TP10', MaGVQL = 'GVQL01' where MaDK_HCDC = 'HCDC22';

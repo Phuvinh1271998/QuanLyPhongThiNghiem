@@ -60,6 +60,7 @@
             this.btThoat.Size = new System.Drawing.Size(75, 35);
             this.btThoat.TabIndex = 13;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btDangNhap
             // 
@@ -68,6 +69,7 @@
             this.btDangNhap.Size = new System.Drawing.Size(75, 35);
             this.btDangNhap.TabIndex = 12;
             this.btDangNhap.Text = "Đăng nhập";
+            this.btDangNhap.Click += new System.EventHandler(this.btDangNhap_Click);
             // 
             // label2
             // 
@@ -100,6 +102,7 @@
             this.Controls.Add(this.label1);
             this.Name = "F_DangNhap";
             this.Text = "F_DangNhap";
+            this.Load += new System.EventHandler(this.F_DangNhap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.txtMatKhau.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenDN.Properties)).EndInit();
             this.ResumeLayout(false);

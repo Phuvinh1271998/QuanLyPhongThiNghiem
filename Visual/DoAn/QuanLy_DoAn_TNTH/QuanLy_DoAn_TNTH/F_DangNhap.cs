@@ -43,7 +43,6 @@ namespace QuanLy_DoAn_TNTH
             string id = txtTenDN.Text;
             string mk = txtMatKhau.Text;
             string server = "DESKTOP-UKGCLUB\\VINHLEPC";
-            string server = "DESKTOP-AU0H4GF";
             string conn = $"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }";
             if (id == "" | mk == "")
                 MessageBox.Show("Fill all fields !");

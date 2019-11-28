@@ -28,47 +28,29 @@ namespace QuanLy_DoAn_TNTH
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtTenNhom = new System.Windows.Forms.TextBox();
+            this.cbbMaNhom = new System.Windows.Forms.ComboBox();
+            this.cbbTenHC = new System.Windows.Forms.ComboBox();
+            this.txtMaHC = new System.Windows.Forms.TextBox();
+            this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMaGVQL = new System.Windows.Forms.TextBox();
+            this.btXoa = new System.Windows.Forms.Button();
+            this.btSua = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(103, 66);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(161, 20);
-            this.textEdit1.TabIndex = 0;
             // 
             // label1
             // 
@@ -88,20 +70,6 @@ namespace QuanLy_DoAn_TNTH
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên hóa chất";
             // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(434, 25);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(161, 20);
-            this.textEdit3.TabIndex = 4;
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(103, 109);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(161, 20);
-            this.textEdit4.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -111,22 +79,10 @@ namespace QuanLy_DoAn_TNTH
             this.label3.TabIndex = 7;
             this.label3.Text = "Mã nhóm";
             // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(103, 23);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            // 
-            // 
-            // 
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(161, 20);
-            this.comboBoxEdit1.TabIndex = 8;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(5, 112);
+            this.label4.Location = new System.Drawing.Point(5, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 9;
@@ -141,214 +97,185 @@ namespace QuanLy_DoAn_TNTH
             this.label5.TabIndex = 10;
             this.label5.Text = "Tên nhóm";
             // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(434, 66);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            // 
-            // 
-            // 
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(161, 20);
-            this.comboBoxEdit2.TabIndex = 11;
-            // 
             // dataGridView
             // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(3, 207);
+            this.dataGridView.Location = new System.Drawing.Point(3, 254);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(617, 279);
+            this.dataGridView.Size = new System.Drawing.Size(617, 232);
             this.dataGridView.TabIndex = 12;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(22, 151);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton1.TabIndex = 13;
-            this.simpleButton1.Text = "Thêm";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(119, 151);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton2.TabIndex = 14;
-            this.simpleButton2.Text = "Xóa";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Location = new System.Drawing.Point(217, 151);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton3.TabIndex = 15;
-            this.simpleButton3.Text = "Sửa";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Location = new System.Drawing.Point(315, 151);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton4.TabIndex = 16;
-            this.simpleButton4.Text = "Lưu";
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.textEdit2);
+            this.groupControl2.Controls.Add(this.btSua);
+            this.groupControl2.Controls.Add(this.btXoa);
+            this.groupControl2.Controls.Add(this.txtMaGVQL);
+            this.groupControl2.Controls.Add(this.label7);
+            this.groupControl2.Controls.Add(this.txtSoLuong);
+            this.groupControl2.Controls.Add(this.button1);
             this.groupControl2.Controls.Add(this.label6);
-            this.groupControl2.Controls.Add(this.simpleButton4);
-            this.groupControl2.Controls.Add(this.textEdit3);
-            this.groupControl2.Controls.Add(this.simpleButton3);
-            this.groupControl2.Controls.Add(this.comboBoxEdit2);
-            this.groupControl2.Controls.Add(this.simpleButton2);
+            this.groupControl2.Controls.Add(this.txtTenNhom);
+            this.groupControl2.Controls.Add(this.cbbMaNhom);
             this.groupControl2.Controls.Add(this.label5);
-            this.groupControl2.Controls.Add(this.simpleButton1);
             this.groupControl2.Controls.Add(this.label2);
-            this.groupControl2.Controls.Add(this.comboBoxEdit1);
-            this.groupControl2.Controls.Add(this.textEdit4);
             this.groupControl2.Controls.Add(this.label4);
-            this.groupControl2.Controls.Add(this.textEdit1);
             this.groupControl2.Controls.Add(this.label3);
             this.groupControl2.Controls.Add(this.label1);
             this.groupControl2.Location = new System.Drawing.Point(3, 3);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(617, 198);
+            this.groupControl2.Size = new System.Drawing.Size(617, 245);
             this.groupControl2.TabIndex = 18;
-            this.groupControl2.Text = "Đăng ký hóa chất";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(434, 109);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(161, 20);
-            this.textEdit2.TabIndex = 18;
+            this.groupControl2.Text = "Mã GVQL";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(352, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(60, 13);
+            this.label6.Size = new System.Drawing.Size(54, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "GV Quản lý";
+            this.label6.Text = "Tên GVQL";
             // 
-            // comboBox1
+            // txtTenNhom
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(440, 28);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 19;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            this.txtTenNhom.Location = new System.Drawing.Point(437, 25);
+            this.txtTenNhom.Name = "txtTenNhom";
+            this.txtTenNhom.Size = new System.Drawing.Size(157, 21);
+            this.txtTenNhom.TabIndex = 21;
             // 
-            // comboBox2
+            // cbbMaNhom
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(440, 69);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 20;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.cbbMaNhom.FormattingEnabled = true;
+            this.cbbMaNhom.Location = new System.Drawing.Point(104, 25);
+            this.cbbMaNhom.Name = "cbbMaNhom";
+            this.cbbMaNhom.Size = new System.Drawing.Size(147, 21);
+            this.cbbMaNhom.TabIndex = 19;
+            this.cbbMaNhom.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // textBox1
+            // cbbTenHC
             // 
-            this.textBox1.Location = new System.Drawing.Point(107, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 21;
+            this.cbbTenHC.FormattingEnabled = true;
+            this.cbbTenHC.Location = new System.Drawing.Point(440, 69);
+            this.cbbTenHC.Name = "cbbTenHC";
+            this.cbbTenHC.Size = new System.Drawing.Size(157, 21);
+            this.cbbTenHC.TabIndex = 20;
+            this.cbbTenHC.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // textBox2
+            // txtMaHC
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 22;
+            this.txtMaHC.Location = new System.Drawing.Point(107, 69);
+            this.txtMaHC.Name = "txtMaHC";
+            this.txtMaHC.Size = new System.Drawing.Size(147, 20);
+            this.txtMaHC.TabIndex = 22;
             // 
-            // comboBox3
+            // cbbTenGVQL
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(440, 112);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 23;
+            this.cbbTenGVQL.FormattingEnabled = true;
+            this.cbbTenGVQL.Location = new System.Drawing.Point(440, 112);
+            this.cbbTenGVQL.Name = "cbbTenGVQL";
+            this.cbbTenGVQL.Size = new System.Drawing.Size(157, 21);
+            this.cbbTenGVQL.TabIndex = 23;
+            this.cbbTenGVQL.SelectedIndexChanged += new System.EventHandler(this.cbbTenGVQL_SelectedIndexChanged);
             // 
-            // textBox3
+            // txtSoLuong
             // 
-            this.textBox3.Location = new System.Drawing.Point(107, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 24;
-            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            this.txtSoLuong.Location = new System.Drawing.Point(104, 156);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(147, 21);
+            this.txtSoLuong.TabIndex = 24;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(28, 158);
+            this.button1.Location = new System.Drawing.Point(41, 192);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 39);
             this.button1.TabIndex = 25;
             this.button1.TabStop = false;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(5, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Mã GVQL";
+            // 
+            // txtMaGVQL
+            // 
+            this.txtMaGVQL.Location = new System.Drawing.Point(104, 109);
+            this.txtMaGVQL.Name = "txtMaGVQL";
+            this.txtMaGVQL.Size = new System.Drawing.Size(147, 21);
+            this.txtMaGVQL.TabIndex = 27;
+            // 
+            // btXoa
+            // 
+            this.btXoa.Location = new System.Drawing.Point(143, 192);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(75, 39);
+            this.btXoa.TabIndex = 28;
+            this.btXoa.TabStop = false;
+            this.btXoa.Text = "Xóa";
+            this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
+            // 
+            // btSua
+            // 
+            this.btSua.Location = new System.Drawing.Point(244, 192);
+            this.btSua.Name = "btSua";
+            this.btSua.Size = new System.Drawing.Size(75, 39);
+            this.btSua.TabIndex = 29;
+            this.btSua.TabStop = false;
+            this.btSua.Text = "Sửa";
+            this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
+            // 
             // US_dkHoaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbbTenGVQL);
+            this.Controls.Add(this.txtMaHC);
+            this.Controls.Add(this.cbbTenHC);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupControl2);
             this.Name = "US_dkHoaChat";
             this.Size = new System.Drawing.Size(626, 489);
             this.Load += new System.EventHandler(this.US_dkHoaChat_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.DataGridView dataGridView;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.ComboBox cbbMaNhom;
+        private System.Windows.Forms.ComboBox cbbTenHC;
+        private System.Windows.Forms.TextBox txtTenNhom;
+        private System.Windows.Forms.TextBox txtMaHC;
+        private System.Windows.Forms.ComboBox cbbTenGVQL;
+        private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtMaGVQL;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btXoa;
+        private System.Windows.Forms.Button btSua;
     }
 }

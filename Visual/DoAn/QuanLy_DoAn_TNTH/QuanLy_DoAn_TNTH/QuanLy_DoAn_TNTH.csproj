@@ -120,12 +120,6 @@
     <Compile Include="US_dkHoaChat.Designer.cs">
       <DependentUpon>US_dkHoaChat.cs</DependentUpon>
     </Compile>
-    <Compile Include="US_dkPhongThiNghiem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="US_dkPhongThiNghiem.Designer.cs">
-      <DependentUpon>US_dkPhongThiNghiem.cs</DependentUpon>
-    </Compile>
     <Compile Include="US_dkPTN.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -196,9 +190,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="US_dkHoaChat.resx">
       <DependentUpon>US_dkHoaChat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="US_dkPhongThiNghiem.resx">
-      <DependentUpon>US_dkPhongThiNghiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_dkPTN.resx">
       <DependentUpon>US_dkPTN.cs</DependentUpon>

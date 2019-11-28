@@ -563,7 +563,6 @@ E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_D
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.Properties.Resources.resources
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dkDungCu.resources
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dkHoaChat.resources
-E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dkPhongThiNghiem.resources
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dkPTN.resources
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dsDeTai.resources
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_dsGVHD.resources
