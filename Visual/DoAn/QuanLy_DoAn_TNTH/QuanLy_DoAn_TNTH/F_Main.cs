@@ -137,5 +137,16 @@ namespace QuanLy_DoAn_TNTH
             }
             US_themSV.Instance.BringToFront();
         }
+
+        private void barButtonItem35_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (!this.Controls.Contains(US_htDungCu.Instance))
+            {
+                this.Controls.Add(US_htDungCu.Instance);
+                US_htDungCu.Instance.Dock = DockStyle.Fill;
+                US_htDungCu.Instance.BringToFront();
+            }
+            US_htDungCu.Instance.BringToFront();
+        }
     }
 }

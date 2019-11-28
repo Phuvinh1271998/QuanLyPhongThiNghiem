@@ -162,6 +162,12 @@
     <Compile Include="US_dsThietBi.Designer.cs">
       <DependentUpon>US_dsThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="US_htDungCu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_htDungCu.Designer.cs">
+      <DependentUpon>US_htDungCu.cs</DependentUpon>
+    </Compile>
     <Compile Include="US_themSV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="US_dsThietBi.resx">
       <DependentUpon>US_dsThietBi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="US_htDungCu.resx">
+      <DependentUpon>US_htDungCu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_themSV.resx">
       <DependentUpon>US_themSV.cs</DependentUpon>
