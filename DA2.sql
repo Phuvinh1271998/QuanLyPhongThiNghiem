@@ -273,17 +273,37 @@ default_database  = DAMH
 use DAMH
 create user gvql for login gvql
 go
-grant insert,select,delete,update on HoaChat to GVQL
+grant insert,select,delete,update,alter on Buoi to gvql
 go
-grant insert,select,delete,update on DK_HoaChat to GVQL
+grant insert,select,delete,update,alter on Loai_TN to gvql
 go
-grant insert,select,delete,update on DungCu to GVQL
+grant insert,select,delete,update,alter on DK_PTN to gvql
 go
-grant insert,select,delete,update on DK_DungCu to GVQL
+grant insert,select,delete,update,alter on PhongThiNghiem to gvql
 go
-grant insert,select,delete,update on ThietBi to GVQL
+grant insert,select,delete,update,alter on Khoa to gvql
 go
-grant insert,select,delete,update on DK_PTN to GVQL
+grant insert,select,delete,update,alter on HoaChat to gvql
+go
+grant insert,select,delete,update,alter on DK_HoaChat to gvql
+go
+grant insert,select,delete,update,alter on DungCu to gvql
+go
+grant insert,select,delete,update,alter on DK_DungCu to gvql
+go
+grant insert,select,delete,update,alter on GV_QLTN to gvql
+go
+grant insert,select,delete,update,alter on Lop to gvql
+go
+grant insert,select,delete,update,alter on SinhVien to gvql
+go
+grant insert,select,delete,update,alter on GVHD to gvql
+go
+grant insert,select,delete,update,alter on NhomSV to gvql
+go
+grant insert,select,delete,update,alter on DeAn to gvql
+go
+grant insert,select,delete,update,alter on ThietBi to gvql
 go
 grant execute on DKPTN to gvql
 
