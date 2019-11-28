@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLy_DoAn_TNTH
 {
@@ -28,7 +29,15 @@ namespace QuanLy_DoAn_TNTH
         }
         private void US_dsNhom_Load(object sender, EventArgs e)
         {
-
+            SqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
+            string str = "select * from NhomSV";
+            SqlCommand cmd = new SqlCommand(str, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView_Nhom.DataSource = dt;
+            conn.Close();
         }
     }
 }

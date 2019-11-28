@@ -47,6 +47,7 @@
             this.Controls.Add(this.dataGridView_HoaChat);
             this.Name = "US_dsHoaChat";
             this.Size = new System.Drawing.Size(626, 489);
+            this.Load += new System.EventHandler(this.US_dsHoaChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_HoaChat)).EndInit();
             this.ResumeLayout(false);
 

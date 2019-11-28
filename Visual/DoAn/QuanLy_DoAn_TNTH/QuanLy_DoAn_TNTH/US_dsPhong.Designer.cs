@@ -47,6 +47,7 @@
             this.Controls.Add(this.dataGridView_Phong);
             this.Name = "US_dsPhong";
             this.Size = new System.Drawing.Size(626, 489);
+            this.Load += new System.EventHandler(this.US_dsPhong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Phong)).EndInit();
             this.ResumeLayout(false);
 
