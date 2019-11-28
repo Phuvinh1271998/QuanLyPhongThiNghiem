@@ -1,4 +1,4 @@
-﻿namespace QuanLy_DoAn_TNTH
+namespace QuanLy_DoAn_TNTH
 {
     partial class US_dkDungCu
     {
@@ -30,6 +30,9 @@
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaDC = new System.Windows.Forms.TextBox();
+            this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
+            this.cbbTenDC = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMaDK_HCDC = new System.Windows.Forms.TextBox();
             this.btSua = new System.Windows.Forms.Button();
@@ -46,12 +49,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbbTenDC = new System.Windows.Forms.ComboBox();
-            this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
-            this.txtMaDC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -90,6 +89,30 @@
             this.groupControl2.TabIndex = 21;
             this.groupControl2.Text = "Đăng ký dụng cụ";
             // 
+            // txtMaDC
+            // 
+            this.txtMaDC.Location = new System.Drawing.Point(104, 66);
+            this.txtMaDC.Name = "txtMaDC";
+            this.txtMaDC.Size = new System.Drawing.Size(147, 21);
+            this.txtMaDC.TabIndex = 33;
+            // 
+            // cbbTenGVQL
+            // 
+            this.cbbTenGVQL.FormattingEnabled = true;
+            this.cbbTenGVQL.Location = new System.Drawing.Point(437, 109);
+            this.cbbTenGVQL.Name = "cbbTenGVQL";
+            this.cbbTenGVQL.Size = new System.Drawing.Size(157, 21);
+            this.cbbTenGVQL.TabIndex = 32;
+            this.cbbTenGVQL.SelectedIndexChanged += new System.EventHandler(this.cbbTenGVQL_SelectedIndexChanged);
+            // 
+            // cbbTenDC
+            // 
+            this.cbbTenDC.FormattingEnabled = true;
+            this.cbbTenDC.Location = new System.Drawing.Point(437, 66);
+            this.cbbTenDC.Name = "cbbTenDC";
+            this.cbbTenDC.Size = new System.Drawing.Size(157, 21);
+            this.cbbTenDC.TabIndex = 31;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -115,6 +138,7 @@
             this.btSua.TabStop = false;
             this.btSua.Text = "Sửa";
             this.btSua.UseVisualStyleBackColor = true;
+            this.btSua.Click += new System.EventHandler(this.btSua_Click);
             // 
             // btXoa
             // 
@@ -125,6 +149,7 @@
             this.btXoa.TabStop = false;
             this.btXoa.Text = "Xóa";
             this.btXoa.UseVisualStyleBackColor = true;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // txtMaGVQL
             // 
@@ -158,6 +183,7 @@
             this.btThem.TabStop = false;
             this.btThem.Text = "Thêm";
             this.btThem.UseVisualStyleBackColor = true;
+            this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // label6
             // 
@@ -229,29 +255,6 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã dụng cụ";
             // 
-            // cbbTenDC
-            // 
-            this.cbbTenDC.FormattingEnabled = true;
-            this.cbbTenDC.Location = new System.Drawing.Point(437, 66);
-            this.cbbTenDC.Name = "cbbTenDC";
-            this.cbbTenDC.Size = new System.Drawing.Size(157, 21);
-            this.cbbTenDC.TabIndex = 31;
-            // 
-            // cbbTenGVQL
-            // 
-            this.cbbTenGVQL.FormattingEnabled = true;
-            this.cbbTenGVQL.Location = new System.Drawing.Point(437, 109);
-            this.cbbTenGVQL.Name = "cbbTenGVQL";
-            this.cbbTenGVQL.Size = new System.Drawing.Size(157, 21);
-            this.cbbTenGVQL.TabIndex = 32;
-            // 
-            // txtMaDC
-            // 
-            this.txtMaDC.Location = new System.Drawing.Point(104, 66);
-            this.txtMaDC.Name = "txtMaDC";
-            this.txtMaDC.Size = new System.Drawing.Size(147, 21);
-            this.txtMaDC.TabIndex = 33;
-            // 
             // US_dkDungCu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -262,10 +265,9 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "US_dkDungCu";
             this.Size = new System.Drawing.Size(626, 489);
+            this.Load += new System.EventHandler(this.US_dkDungCu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
             this.ResumeLayout(false);
 
         }
