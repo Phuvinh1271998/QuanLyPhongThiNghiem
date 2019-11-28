@@ -34,8 +34,6 @@ namespace QuanLy_DoAn_TNTH
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnIn = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -45,7 +43,6 @@ namespace QuanLy_DoAn_TNTH
             this.cbTenPhong = new System.Windows.Forms.ComboBox();
             this.cbTenGV = new System.Windows.Forms.ComboBox();
             this.cbLoaiTN = new System.Windows.Forms.ComboBox();
-            this.txtNgayDK = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,6 +68,7 @@ namespace QuanLy_DoAn_TNTH
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.date = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -130,8 +128,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnIn);
-            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.date);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -141,7 +138,6 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.Controls.Add(this.cbTenPhong);
             this.groupBox1.Controls.Add(this.cbTenGV);
             this.groupBox1.Controls.Add(this.cbLoaiTN);
-            this.groupBox1.Controls.Add(this.txtNgayDK);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.label9);
@@ -173,24 +169,6 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.Text = "Đăng ký phòng thí nghiệm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(431, 196);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 23);
-            this.btnIn.TabIndex = 42;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(332, 196);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 41;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            // 
             // btnSua
             // 
             this.btnSua.Location = new System.Drawing.Point(228, 196);
@@ -208,6 +186,7 @@ namespace QuanLy_DoAn_TNTH
             this.btnXoa.TabIndex = 39;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -266,13 +245,6 @@ namespace QuanLy_DoAn_TNTH
             this.cbLoaiTN.Size = new System.Drawing.Size(121, 21);
             this.cbLoaiTN.TabIndex = 32;
             // 
-            // txtNgayDK
-            // 
-            this.txtNgayDK.Location = new System.Drawing.Point(142, 112);
-            this.txtNgayDK.Name = "txtNgayDK";
-            this.txtNgayDK.Size = new System.Drawing.Size(100, 20);
-            this.txtNgayDK.TabIndex = 31;
-            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(431, 151);
@@ -291,7 +263,7 @@ namespace QuanLy_DoAn_TNTH
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(314, 154);
+            this.label9.Location = new System.Drawing.Point(369, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 25;
@@ -498,6 +470,13 @@ namespace QuanLy_DoAn_TNTH
             this.textEdit2.Size = new System.Drawing.Size(152, 20);
             this.textEdit2.TabIndex = 1;
             // 
+            // date
+            // 
+            this.date.Location = new System.Drawing.Point(142, 112);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(152, 20);
+            this.date.TabIndex = 41;
+            // 
             // US_dkPTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -555,7 +534,6 @@ namespace QuanLy_DoAn_TNTH
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox txtNgayDK;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtMaTB;
         private System.Windows.Forms.ComboBox cbBuoi;
@@ -564,11 +542,10 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.ComboBox cbLoaiTN;
         private System.Windows.Forms.ComboBox cbTenNhom;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTenTB;
+        private System.Windows.Forms.DateTimePicker date;
     }
 }
