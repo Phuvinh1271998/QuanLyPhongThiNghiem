@@ -28,14 +28,11 @@ namespace QuanLy_DoAn_TNTH
         /// </summary>
         private void InitializeComponent()
         {
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnIn = new System.Windows.Forms.Button();
-            this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -45,52 +42,23 @@ namespace QuanLy_DoAn_TNTH
             this.cbTenPhong = new System.Windows.Forms.ComboBox();
             this.cbTenGV = new System.Windows.Forms.ComboBox();
             this.cbLoaiTN = new System.Windows.Forms.ComboBox();
-            this.txtNgayDK = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBoxEdit4 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit3 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTenTB = new System.Windows.Forms.TextBox();
             this.dataGridView_ThietBi = new System.Windows.Forms.DataGridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ThietBi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(142, 31);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(152, 20);
-            this.textEdit1.TabIndex = 0;
             // 
             // label1
             // 
@@ -130,8 +98,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnIn);
-            this.groupBox1.Controls.Add(this.btnLuu);
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThem);
@@ -141,30 +108,16 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.Controls.Add(this.cbTenPhong);
             this.groupBox1.Controls.Add(this.cbTenGV);
             this.groupBox1.Controls.Add(this.cbLoaiTN);
-            this.groupBox1.Controls.Add(this.txtNgayDK);
             this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.dataGridView2);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textEdit4);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.comboBoxEdit4);
-            this.groupBox1.Controls.Add(this.simpleButton6);
-            this.groupBox1.Controls.Add(this.simpleButton4);
-            this.groupBox1.Controls.Add(this.simpleButton3);
-            this.groupBox1.Controls.Add(this.simpleButton2);
-            this.groupBox1.Controls.Add(this.simpleButton5);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textEdit3);
-            this.groupBox1.Controls.Add(this.comboBoxEdit3);
-            this.groupBox1.Controls.Add(this.comboBoxEdit2);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.comboBoxEdit1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textEdit1);
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(599, 430);
@@ -172,24 +125,6 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng ký phòng thí nghiệm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btnIn
-            // 
-            this.btnIn.Location = new System.Drawing.Point(431, 196);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(75, 23);
-            this.btnIn.TabIndex = 42;
-            this.btnIn.Text = "In";
-            this.btnIn.UseVisualStyleBackColor = true;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(332, 196);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 41;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
@@ -224,14 +159,14 @@ namespace QuanLy_DoAn_TNTH
             this.cbTenNhom.FormattingEnabled = true;
             this.cbTenNhom.Location = new System.Drawing.Point(142, 30);
             this.cbTenNhom.Name = "cbTenNhom";
-            this.cbTenNhom.Size = new System.Drawing.Size(121, 21);
+            this.cbTenNhom.Size = new System.Drawing.Size(161, 21);
             this.cbTenNhom.TabIndex = 37;
             // 
             // txtMaTB
             // 
             this.txtMaTB.Location = new System.Drawing.Point(431, 112);
             this.txtMaTB.Name = "txtMaTB";
-            this.txtMaTB.Size = new System.Drawing.Size(100, 20);
+            this.txtMaTB.Size = new System.Drawing.Size(162, 20);
             this.txtMaTB.TabIndex = 36;
             // 
             // cbBuoi
@@ -239,7 +174,7 @@ namespace QuanLy_DoAn_TNTH
             this.cbBuoi.FormattingEnabled = true;
             this.cbBuoi.Location = new System.Drawing.Point(431, 73);
             this.cbBuoi.Name = "cbBuoi";
-            this.cbBuoi.Size = new System.Drawing.Size(121, 21);
+            this.cbBuoi.Size = new System.Drawing.Size(162, 21);
             this.cbBuoi.TabIndex = 35;
             // 
             // cbTenPhong
@@ -247,7 +182,7 @@ namespace QuanLy_DoAn_TNTH
             this.cbTenPhong.FormattingEnabled = true;
             this.cbTenPhong.Location = new System.Drawing.Point(431, 30);
             this.cbTenPhong.Name = "cbTenPhong";
-            this.cbTenPhong.Size = new System.Drawing.Size(121, 21);
+            this.cbTenPhong.Size = new System.Drawing.Size(162, 21);
             this.cbTenPhong.TabIndex = 34;
             // 
             // cbTenGV
@@ -255,7 +190,7 @@ namespace QuanLy_DoAn_TNTH
             this.cbTenGV.FormattingEnabled = true;
             this.cbTenGV.Location = new System.Drawing.Point(142, 150);
             this.cbTenGV.Name = "cbTenGV";
-            this.cbTenGV.Size = new System.Drawing.Size(121, 21);
+            this.cbTenGV.Size = new System.Drawing.Size(161, 21);
             this.cbTenGV.TabIndex = 33;
             // 
             // cbLoaiTN
@@ -263,21 +198,14 @@ namespace QuanLy_DoAn_TNTH
             this.cbLoaiTN.FormattingEnabled = true;
             this.cbLoaiTN.Location = new System.Drawing.Point(142, 73);
             this.cbLoaiTN.Name = "cbLoaiTN";
-            this.cbLoaiTN.Size = new System.Drawing.Size(121, 21);
+            this.cbLoaiTN.Size = new System.Drawing.Size(161, 21);
             this.cbLoaiTN.TabIndex = 32;
-            // 
-            // txtNgayDK
-            // 
-            this.txtNgayDK.Location = new System.Drawing.Point(142, 112);
-            this.txtNgayDK.Name = "txtNgayDK";
-            this.txtNgayDK.Size = new System.Drawing.Size(100, 20);
-            this.txtNgayDK.TabIndex = 31;
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(431, 151);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(100, 20);
+            this.txtSoLuong.Size = new System.Drawing.Size(162, 20);
             this.txtSoLuong.TabIndex = 30;
             // 
             // dataGridView2
@@ -291,18 +219,11 @@ namespace QuanLy_DoAn_TNTH
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(314, 154);
+            this.label9.Location = new System.Drawing.Point(369, 158);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 13);
             this.label9.TabIndex = 25;
             this.label9.Text = "Số Lượng";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(431, 151);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(152, 20);
-            this.textEdit4.TabIndex = 24;
             // 
             // label8
             // 
@@ -313,58 +234,6 @@ namespace QuanLy_DoAn_TNTH
             this.label8.TabIndex = 23;
             this.label8.Text = "Tên giảng viên quản lý";
             // 
-            // comboBoxEdit4
-            // 
-            this.comboBoxEdit4.Location = new System.Drawing.Point(142, 151);
-            this.comboBoxEdit4.Name = "comboBoxEdit4";
-            // 
-            // 
-            // 
-            this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit4.Size = new System.Drawing.Size(152, 20);
-            this.comboBoxEdit4.TabIndex = 22;
-            // 
-            // simpleButton6
-            // 
-            this.simpleButton6.Location = new System.Drawing.Point(419, 189);
-            this.simpleButton6.Name = "simpleButton6";
-            this.simpleButton6.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton6.TabIndex = 21;
-            this.simpleButton6.Text = "In";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Location = new System.Drawing.Point(324, 189);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton4.TabIndex = 20;
-            this.simpleButton4.Text = "Lưu";
-            // 
-            // simpleButton3
-            // 
-            this.simpleButton3.Location = new System.Drawing.Point(226, 189);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton3.TabIndex = 19;
-            this.simpleButton3.Text = "Sửa";
-            // 
-            // simpleButton2
-            // 
-            this.simpleButton2.Location = new System.Drawing.Point(128, 189);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton2.TabIndex = 18;
-            this.simpleButton2.Text = "Xóa";
-            // 
-            // simpleButton5
-            // 
-            this.simpleButton5.Location = new System.Drawing.Point(31, 189);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(80, 30);
-            this.simpleButton5.TabIndex = 17;
-            this.simpleButton5.Text = "Thêm";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -373,15 +242,6 @@ namespace QuanLy_DoAn_TNTH
             this.label7.Size = new System.Drawing.Size(74, 13);
             this.label7.TabIndex = 13;
             this.label7.Text = "Ngày đăng ký";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(142, 112);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(152, 20);
-            this.maskedTextBox1.TabIndex = 12;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label6
             // 
@@ -392,57 +252,12 @@ namespace QuanLy_DoAn_TNTH
             this.label6.TabIndex = 11;
             this.label6.Text = "Mã thiết bị";
             // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(431, 112);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(152, 20);
-            this.textEdit3.TabIndex = 10;
-            // 
-            // comboBoxEdit3
-            // 
-            this.comboBoxEdit3.Location = new System.Drawing.Point(431, 73);
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            // 
-            // 
-            // 
-            this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit3.Size = new System.Drawing.Size(152, 20);
-            this.comboBoxEdit3.TabIndex = 9;
-            // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(431, 31);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            // 
-            // 
-            // 
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(152, 20);
-            this.comboBoxEdit2.TabIndex = 8;
-            // 
-            // comboBoxEdit1
-            // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(142, 73);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            // 
-            // 
-            // 
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(152, 20);
-            this.comboBoxEdit1.TabIndex = 7;
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.txtTenTB);
             this.groupBox2.Controls.Add(this.dataGridView_ThietBi);
-            this.groupBox2.Controls.Add(this.simpleButton1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textEdit2);
             this.groupBox2.Location = new System.Drawing.Point(608, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(392, 236);
@@ -452,18 +267,19 @@ namespace QuanLy_DoAn_TNTH
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(292, 28);
+            this.btnTimKiem.Location = new System.Drawing.Point(293, 28);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(75, 23);
             this.btnTimKiem.TabIndex = 43;
             this.btnTimKiem.Text = "Tìm Kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // txtTenTB
             // 
             this.txtTenTB.Location = new System.Drawing.Point(135, 31);
             this.txtTenTB.Name = "txtTenTB";
-            this.txtTenTB.Size = new System.Drawing.Size(100, 20);
+            this.txtTenTB.Size = new System.Drawing.Size(152, 20);
             this.txtTenTB.TabIndex = 43;
             // 
             // dataGridView_ThietBi
@@ -475,13 +291,6 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView_ThietBi.TabIndex = 12;
             this.dataGridView_ThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ThietBi_CellClick);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(293, 29);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Tìm kiếm";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -491,12 +300,12 @@ namespace QuanLy_DoAn_TNTH
             this.label5.TabIndex = 5;
             this.label5.Text = "Tên thiết bị";
             // 
-            // textEdit2
+            // dateTimePicker1
             // 
-            this.textEdit2.Location = new System.Drawing.Point(135, 31);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(152, 20);
-            this.textEdit2.TabIndex = 1;
+            this.dateTimePicker1.Location = new System.Drawing.Point(142, 109);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(161, 20);
+            this.dateTimePicker1.TabIndex = 42;
             // 
             // US_dkPTN
             // 
@@ -507,55 +316,30 @@ namespace QuanLy_DoAn_TNTH
             this.Name = "US_dkPTN";
             this.Size = new System.Drawing.Size(1003, 439);
             this.Load += new System.EventHandler(this.US_dkPTN_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ThietBi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.Label label6;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
         private System.Windows.Forms.DataGridView dataGridView_ThietBi;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label9;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
         private System.Windows.Forms.Label label8;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox txtNgayDK;
         private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.TextBox txtMaTB;
         private System.Windows.Forms.ComboBox cbBuoi;
@@ -564,11 +348,11 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.ComboBox cbLoaiTN;
         private System.Windows.Forms.ComboBox cbTenNhom;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnIn;
-        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTenTB;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

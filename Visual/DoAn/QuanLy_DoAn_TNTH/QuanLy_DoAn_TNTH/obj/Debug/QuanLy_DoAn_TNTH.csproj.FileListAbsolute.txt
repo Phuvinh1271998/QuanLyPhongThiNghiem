@@ -578,3 +578,4 @@ E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_D
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.exe
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.pdb
 E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_htDungCu.resources
+E:\BaiTap\Do an 1 chi\QuanLyPhongThiNghiem\Visual\DoAn\QuanLy_DoAn_TNTH\QuanLy_DoAn_TNTH\obj\Debug\QuanLy_DoAn_TNTH.US_htPTN.resources

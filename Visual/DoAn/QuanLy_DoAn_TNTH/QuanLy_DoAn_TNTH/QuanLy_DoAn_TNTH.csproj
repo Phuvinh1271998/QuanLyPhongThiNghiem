@@ -168,6 +168,12 @@
     <Compile Include="US_htDungCu.Designer.cs">
       <DependentUpon>US_htDungCu.cs</DependentUpon>
     </Compile>
+    <Compile Include="US_htPTN.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="US_htPTN.Designer.cs">
+      <DependentUpon>US_htPTN.cs</DependentUpon>
+    </Compile>
     <Compile Include="US_themSV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="US_htDungCu.resx">
       <DependentUpon>US_htDungCu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="US_htPTN.resx">
+      <DependentUpon>US_htPTN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_themSV.resx">
       <DependentUpon>US_themSV.cs</DependentUpon>
