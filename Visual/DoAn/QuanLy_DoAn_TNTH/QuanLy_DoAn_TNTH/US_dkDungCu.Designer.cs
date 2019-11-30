@@ -32,7 +32,6 @@ namespace QuanLy_DoAn_TNTH
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.txtMaDC = new System.Windows.Forms.TextBox();
             this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
-            this.cbbTenDC = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMaDK_HCDC = new System.Windows.Forms.TextBox();
             this.btSua = new System.Windows.Forms.Button();
@@ -49,8 +48,12 @@ namespace QuanLy_DoAn_TNTH
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtTenDC = new System.Windows.Forms.TextBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -61,12 +64,12 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView.Size = new System.Drawing.Size(617, 232);
             this.dataGridView.TabIndex = 20;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.txtMaDC);
             this.groupControl2.Controls.Add(this.cbbTenGVQL);
-            this.groupControl2.Controls.Add(this.cbbTenDC);
             this.groupControl2.Controls.Add(this.label8);
             this.groupControl2.Controls.Add(this.txtMaDK_HCDC);
             this.groupControl2.Controls.Add(this.btSua);
@@ -104,14 +107,6 @@ namespace QuanLy_DoAn_TNTH
             this.cbbTenGVQL.Size = new System.Drawing.Size(157, 21);
             this.cbbTenGVQL.TabIndex = 32;
             this.cbbTenGVQL.SelectedIndexChanged += new System.EventHandler(this.cbbTenGVQL_SelectedIndexChanged);
-            // 
-            // cbbTenDC
-            // 
-            this.cbbTenDC.FormattingEnabled = true;
-            this.cbbTenDC.Location = new System.Drawing.Point(437, 66);
-            this.cbbTenDC.Name = "cbbTenDC";
-            this.cbbTenDC.Size = new System.Drawing.Size(157, 21);
-            this.cbbTenDC.TabIndex = 31;
             // 
             // label8
             // 
@@ -255,20 +250,52 @@ namespace QuanLy_DoAn_TNTH
             this.label1.TabIndex = 1;
             this.label1.Text = "Mã dụng cụ";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(622, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(261, 483);
+            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // txtTenDC
+            // 
+            this.txtTenDC.Location = new System.Drawing.Point(440, 69);
+            this.txtTenDC.Name = "txtTenDC";
+            this.txtTenDC.Size = new System.Drawing.Size(157, 20);
+            this.txtTenDC.TabIndex = 34;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(346, 195);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 39);
+            this.btnLuu.TabIndex = 35;
+            this.btnLuu.TabStop = false;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // US_dkDungCu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.txtTenDC);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.dataGridView);
             this.Name = "US_dkDungCu";
-            this.Size = new System.Drawing.Size(626, 489);
+            this.Size = new System.Drawing.Size(889, 489);
             this.Load += new System.EventHandler(this.US_dkDungCu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,6 +320,8 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtMaDC;
         private System.Windows.Forms.ComboBox cbbTenGVQL;
-        private System.Windows.Forms.ComboBox cbbTenDC;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtTenDC;
+        private System.Windows.Forms.Button btnLuu;
     }
 }

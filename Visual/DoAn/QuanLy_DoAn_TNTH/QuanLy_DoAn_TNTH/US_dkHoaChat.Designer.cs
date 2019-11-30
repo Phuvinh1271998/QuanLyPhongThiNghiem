@@ -41,17 +41,19 @@ namespace QuanLy_DoAn_TNTH
             this.btXoa = new System.Windows.Forms.Button();
             this.txtMaGVQL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenNhom = new System.Windows.Forms.TextBox();
-            this.cbbMaNhom = new System.Windows.Forms.ComboBox();
-            this.cbbTenHC = new System.Windows.Forms.ComboBox();
-            this.txtMaHC = new System.Windows.Forms.TextBox();
             this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.cbbMaNhom = new System.Windows.Forms.ComboBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtMaHC = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtTenHC = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -77,9 +79,9 @@ namespace QuanLy_DoAn_TNTH
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Mã nhóm";
+            this.label3.Text = "Tên Nhóm";
             // 
             // label4
             // 
@@ -95,9 +97,9 @@ namespace QuanLy_DoAn_TNTH
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(352, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 13);
+            this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Tên nhóm";
+            this.label5.Text = "Mã Nhóm";
             // 
             // dataGridView
             // 
@@ -106,6 +108,7 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(617, 232);
             this.dataGridView.TabIndex = 12;
+            this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             // 
             // groupControl2
@@ -116,11 +119,9 @@ namespace QuanLy_DoAn_TNTH
             this.groupControl2.Controls.Add(this.btXoa);
             this.groupControl2.Controls.Add(this.txtMaGVQL);
             this.groupControl2.Controls.Add(this.label7);
-            this.groupControl2.Controls.Add(this.txtSoLuong);
             this.groupControl2.Controls.Add(this.button1);
             this.groupControl2.Controls.Add(this.label6);
             this.groupControl2.Controls.Add(this.txtTenNhom);
-            this.groupControl2.Controls.Add(this.cbbMaNhom);
             this.groupControl2.Controls.Add(this.label5);
             this.groupControl2.Controls.Add(this.label2);
             this.groupControl2.Controls.Add(this.label4);
@@ -186,14 +187,6 @@ namespace QuanLy_DoAn_TNTH
             this.label7.TabIndex = 26;
             this.label7.Text = "Mã GVQL";
             // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(104, 156);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(147, 21);
-            this.txtSoLuong.TabIndex = 24;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(41, 192);
@@ -221,31 +214,6 @@ namespace QuanLy_DoAn_TNTH
             this.txtTenNhom.Size = new System.Drawing.Size(157, 21);
             this.txtTenNhom.TabIndex = 21;
             // 
-            // cbbMaNhom
-            // 
-            this.cbbMaNhom.FormattingEnabled = true;
-            this.cbbMaNhom.Location = new System.Drawing.Point(104, 25);
-            this.cbbMaNhom.Name = "cbbMaNhom";
-            this.cbbMaNhom.Size = new System.Drawing.Size(147, 21);
-            this.cbbMaNhom.TabIndex = 19;
-            this.cbbMaNhom.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // cbbTenHC
-            // 
-            this.cbbTenHC.FormattingEnabled = true;
-            this.cbbTenHC.Location = new System.Drawing.Point(440, 69);
-            this.cbbTenHC.Name = "cbbTenHC";
-            this.cbbTenHC.Size = new System.Drawing.Size(157, 21);
-            this.cbbTenHC.TabIndex = 20;
-            this.cbbTenHC.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // txtMaHC
-            // 
-            this.txtMaHC.Location = new System.Drawing.Point(107, 69);
-            this.txtMaHC.Name = "txtMaHC";
-            this.txtMaHC.Size = new System.Drawing.Size(147, 20);
-            this.txtMaHC.TabIndex = 22;
-            // 
             // cbbTenGVQL
             // 
             this.cbbTenGVQL.FormattingEnabled = true;
@@ -255,23 +223,77 @@ namespace QuanLy_DoAn_TNTH
             this.cbbTenGVQL.TabIndex = 23;
             this.cbbTenGVQL.SelectedIndexChanged += new System.EventHandler(this.cbbTenGVQL_SelectedIndexChanged);
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(350, 195);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 39);
+            this.btnLuu.TabIndex = 30;
+            this.btnLuu.TabStop = false;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // cbbMaNhom
+            // 
+            this.cbbMaNhom.FormattingEnabled = true;
+            this.cbbMaNhom.Location = new System.Drawing.Point(107, 28);
+            this.cbbMaNhom.Name = "cbbMaNhom";
+            this.cbbMaNhom.Size = new System.Drawing.Size(147, 21);
+            this.cbbMaNhom.TabIndex = 31;
+            this.cbbMaNhom.SelectedIndexChanged += new System.EventHandler(this.cbbMaNhom_SelectedIndexChanged);
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(107, 159);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(147, 20);
+            this.txtSoLuong.TabIndex = 33;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
+            // txtMaHC
+            // 
+            this.txtMaHC.Location = new System.Drawing.Point(107, 69);
+            this.txtMaHC.Name = "txtMaHC";
+            this.txtMaHC.Size = new System.Drawing.Size(147, 20);
+            this.txtMaHC.TabIndex = 35;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(623, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(259, 483);
+            this.dataGridView1.TabIndex = 36;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // txtTenHC
+            // 
+            this.txtTenHC.Location = new System.Drawing.Point(440, 69);
+            this.txtTenHC.Name = "txtTenHC";
+            this.txtTenHC.Size = new System.Drawing.Size(157, 20);
+            this.txtTenHC.TabIndex = 37;
+            // 
             // US_dkHoaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.Controls.Add(this.cbbTenGVQL);
+            this.Controls.Add(this.txtTenHC);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtMaHC);
-            this.Controls.Add(this.cbbTenHC);
+            this.Controls.Add(this.txtSoLuong);
+            this.Controls.Add(this.cbbMaNhom);
+            this.Controls.Add(this.btnLuu);
+            this.Controls.Add(this.cbbTenGVQL);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupControl2);
             this.Name = "US_dkHoaChat";
-            this.Size = new System.Drawing.Size(626, 489);
+            this.Size = new System.Drawing.Size(888, 489);
             this.Load += new System.EventHandler(this.US_dkHoaChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            this.groupControl2.ResumeLayout(false);
-            this.groupControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,12 +308,8 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.DataGridView dataGridView;
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox cbbMaNhom;
-        private System.Windows.Forms.ComboBox cbbTenHC;
         private System.Windows.Forms.TextBox txtTenNhom;
-        private System.Windows.Forms.TextBox txtMaHC;
         private System.Windows.Forms.ComboBox cbbTenGVQL;
-        private System.Windows.Forms.TextBox txtSoLuong;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtMaGVQL;
         private System.Windows.Forms.Label label7;
@@ -299,5 +317,11 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.Button btSua;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtMaDK_HCDC;
+        private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.ComboBox cbbMaNhom;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtMaHC;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtTenHC;
     }
 }
