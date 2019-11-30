@@ -98,6 +98,7 @@ namespace QuanLy_DoAn_TNTH
             sql.Close();
 
             txtMaTB.Enabled = false;
+            btnLuu.Enabled = false;
 
             sql.Close();
         }
@@ -190,13 +191,50 @@ namespace QuanLy_DoAn_TNTH
         }
 
         private void btnSua_Click(object sender, EventArgs e)
+        {             
+            if (this.dataGridView2.SelectedRows.Count > 0)
+            {
+                cbTenNhom.Enabled = false;
+                cbLoaiTN.Enabled = false;
+                dateTimePicker.Enabled = false;
+                cbTenPhong.Enabled = false;
+                cbBuoi.Enabled = false;
+                dataGridView2.Enabled = false;
+                btnLuu.Enabled = true;
+            }
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbTenNhom.SelectedValue = dataGridView2[2, e.RowIndex].Value.ToString();
+            cbLoaiTN.SelectedValue = dataGridView2[4, e.RowIndex].Value.ToString();
+            dateTimePicker.Text = dataGridView2[0, e.RowIndex].Value.ToString();
+            cbTenGV.SelectedValue = dataGridView2[3, e.RowIndex].Value.ToString();
+            cbTenPhong.SelectedValue = dataGridView2[5, e.RowIndex].Value.ToString();
+            cbBuoi.SelectedValue = dataGridView2[1, e.RowIndex].Value.ToString(); 
+            txtMaTB.Text = dataGridView2[6, e.RowIndex].Value.ToString();
+            txtSoLuong.Text = dataGridView2[7, e.RowIndex].Value.ToString();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
         {
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
             if (this.dataGridView2.SelectedRows.Count > 0)
             {
-                DateTime ngay = DateTime.Parse(this.dataGridView2.Rows[this.dataGridView2.CurrentRow.Index].Cells[0].Value.ToString());
-                if (!exedata($"update DK_PTN set MaBuoi='{cbBuoi.Text}',MaNhom='{cbTenNhom.Text}',MaGVQL='{cbTenGV.Text}',MaLoaiTN='{cbLoaiTN.Text}',MaPTN='{cbTenPhong.Text}',MaTB='{txtMaTB.Text}',SoLuongTB={Int32.Parse(txtSoLuong.Text.Trim())} where NgayDK='{ngay}'"))
+                string nhom = cbTenNhom.SelectedValue.ToString().Trim(); ;
+                string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
+                DateTime ngay = dateTimePicker.Value;
+                string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
+                string phong = cbTenPhong.SelectedValue.ToString().Trim(); ;
+                string buoi = cbBuoi.SelectedValue.ToString().Trim(); ;
+                string tb = txtMaTB.Text.Trim();
+                int sl = Int32.Parse(txtSoLuong.Text.Trim());
+                //SqlCommand sc = new SqlCommand($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'", sql);
+                //sc.ExecuteNonQuery();
+
+                if (!exedata($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'"))
                     MessageBox.Show("Có Lỗi !");
                 else
                     MessageBox.Show("Thành công !");
@@ -207,20 +245,15 @@ namespace QuanLy_DoAn_TNTH
                 adap.Fill(dt);
                 dataGridView2.DataSource = dt;
                 sql.Close();
+
+                cbTenNhom.Enabled = true;
+                cbLoaiTN.Enabled = true;
+                dateTimePicker.Enabled = true;               
+                cbTenPhong.Enabled = true;
+                cbBuoi.Enabled = true;
+                btnLuu.Enabled = false;
+                dataGridView2.Enabled = true;
             }
-
-        }
-
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            cbTenNhom.Text = dataGridView2[2, e.RowIndex].Value.ToString();
-            cbLoaiTN.Text = dataGridView2[4, e.RowIndex].Value.ToString();
-            dateTimePicker.Text = dataGridView2[0, e.RowIndex].Value.ToString();
-            cbTenGV.Text = dataGridView2[3, e.RowIndex].Value.ToString();
-            cbTenPhong.Text = dataGridView2[5, e.RowIndex].Value.ToString();
-            cbBuoi.Text = dataGridView2[1, e.RowIndex].Value.ToString();
-            txtMaTB.Text = dataGridView2[6, e.RowIndex].Value.ToString();
-            txtSoLuong.Text = dataGridView2[7, e.RowIndex].Value.ToString();
         }
     }
 }

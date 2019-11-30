@@ -64,6 +64,7 @@ namespace QuanLy_DoAn_TNTH
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.btnLuu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -123,6 +124,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.dateTimePicker);
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnXoa);
@@ -429,6 +431,16 @@ namespace QuanLy_DoAn_TNTH
             this.textEdit2.Size = new System.Drawing.Size(152, 20);
             this.textEdit2.TabIndex = 1;
             // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(322, 196);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 41;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
             // US_dkPTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -494,5 +506,6 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTenTB;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
+        private System.Windows.Forms.Button btnLuu;
     }
 }
