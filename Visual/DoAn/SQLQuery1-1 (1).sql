@@ -325,15 +325,15 @@ go
 insert into Khoa
 values(N'CNSH', N'Công nghệ Sinh học');
 go
-insert into lop values('CNTP01','Thực phẩm 01','CNTP')
+insert into lop values('CNTP01',N'Thực phẩm 01','CNTP')
 go
-insert into lop values('CNTP02','Thực phẩm 02','CNTP')
+insert into lop values('CNTP02',N'Thực phẩm 02','CNTP')
 go
-insert into lop values('CNTP03','Thực phẩm 03','CNTP')
+insert into lop values('CNTP03',N'Thực phẩm 03','CNTP')
 go
-insert into lop values('CNHC01','Hóa Chất 01','CNTP')
+insert into lop values('CNHC01',N'Hóa Chất 01','CNTP')
 go
-insert into lop values('CNHC02','Hóa Chất 02','CNTP')
+insert into lop values('CNHC02',N'Hóa Chất 02','CNTP')
 go
 insert into GVHD
 values('GVHD01', N'Đinh Thị Mận');
