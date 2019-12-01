@@ -51,8 +51,10 @@ namespace QuanLy_DoAn_TNTH
             this.txtMaHC = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTenHC = new System.Windows.Forms.TextBox();
+            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +81,9 @@ namespace QuanLy_DoAn_TNTH
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Tên Nhóm";
+            this.label3.Text = "Mã Nhóm";
             // 
             // label4
             // 
@@ -97,9 +99,9 @@ namespace QuanLy_DoAn_TNTH
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(352, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 13);
+            this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 10;
-            this.label5.Text = "Mã Nhóm";
+            this.label5.Text = "Tên Nhóm";
             // 
             // dataGridView
             // 
@@ -113,6 +115,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.btIn);
             this.groupControl2.Controls.Add(this.label8);
             this.groupControl2.Controls.Add(this.txtMaDK_HCDC);
             this.groupControl2.Controls.Add(this.btSua);
@@ -274,6 +277,17 @@ namespace QuanLy_DoAn_TNTH
             this.txtTenHC.Size = new System.Drawing.Size(157, 20);
             this.txtTenHC.TabIndex = 37;
             // 
+            // btIn
+            // 
+            this.btIn.Location = new System.Drawing.Point(447, 192);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 39);
+            this.btIn.TabIndex = 38;
+            this.btIn.TabStop = false;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
             // US_dkHoaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +307,8 @@ namespace QuanLy_DoAn_TNTH
             this.Load += new System.EventHandler(this.US_dkHoaChat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,5 +339,6 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.TextBox txtMaHC;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTenHC;
+        private System.Windows.Forms.Button btIn;
     }
 }

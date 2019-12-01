@@ -51,8 +51,10 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTenDC = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +70,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.btIn);
             this.groupControl2.Controls.Add(this.txtMaDC);
             this.groupControl2.Controls.Add(this.cbbTenGVQL);
             this.groupControl2.Controls.Add(this.label8);
@@ -277,6 +280,17 @@ namespace QuanLy_DoAn_TNTH
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // btIn
+            // 
+            this.btIn.Location = new System.Drawing.Point(446, 192);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 39);
+            this.btIn.TabIndex = 34;
+            this.btIn.TabStop = false;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
             // US_dkDungCu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +307,8 @@ namespace QuanLy_DoAn_TNTH
             this.Load += new System.EventHandler(this.US_dkDungCu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            this.groupControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -323,5 +339,6 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtTenDC;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btIn;
     }
 }

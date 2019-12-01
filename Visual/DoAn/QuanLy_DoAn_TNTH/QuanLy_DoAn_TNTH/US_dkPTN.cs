@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLy_DoAn_TNTH
 {
@@ -254,6 +255,12 @@ namespace QuanLy_DoAn_TNTH
                 btnLuu.Enabled = false;
                 dataGridView2.Enabled = true;
             }
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            rp_dkPTN rp = new rp_dkPTN();
+            rp.ShowPreview();
         }
     }
 }

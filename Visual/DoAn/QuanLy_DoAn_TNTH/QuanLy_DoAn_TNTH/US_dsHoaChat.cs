@@ -32,7 +32,7 @@ namespace QuanLy_DoAn_TNTH
         {
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            string str = "select * from DEAN";
+            string str = "select * from HoaChat";
             SqlCommand cmd = new SqlCommand(str, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

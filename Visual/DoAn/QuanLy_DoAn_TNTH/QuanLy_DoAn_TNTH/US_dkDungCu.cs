@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLy_DoAn_TNTH
 {
@@ -30,7 +31,13 @@ namespace QuanLy_DoAn_TNTH
 
         private void cbbMaNhom_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            SqlConnection sql = DBUtils.GetDBConnection();
+            sql.Open();
+            SqlCommand cm = new SqlCommand("select * from NhomSV", sql);
+            SqlDataAdapter adap = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            txtTenNhom.Text = cbbMaNhom.SelectedValue.ToString();
         }
 
         private void US_dkDungCu_Load(object sender, EventArgs e)
@@ -38,14 +45,13 @@ namespace QuanLy_DoAn_TNTH
             //-----------------Nhom
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
-            SqlCommand cm = new SqlCommand("select MaNhom,TenNhom from NhomSV", sql);
+            SqlCommand cm = new SqlCommand("select * from NhomSV", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
             adap.Fill(dt);
             cbbMaNhom.DisplayMember = "MaNhom";
-            cbbMaNhom.ValueMember = "MaNhom";
+            cbbMaNhom.ValueMember = "TenNhom";
             cbbMaNhom.DataSource = dt;
-            txtTenNhom.Text = dt.Rows[cbbMaNhom.SelectedIndex]["MaNhom"].ToString();
             
             //-------------------GVQL
             cm = new SqlCommand("select MaGVQL,TenGVQL from GV_QLTN", sql);
@@ -161,7 +167,7 @@ namespace QuanLy_DoAn_TNTH
                 MessageBox.Show("Nhập Số Lượng !");
                 return;
             }
-            string MNhom = cbbMaNhom.SelectedValue.ToString();
+            string MNhom = cbbMaNhom.Text;
             string MDC = txtMaDC.Text;
             string MGV = cbbTenGVQL.SelectedValue.ToString().Trim();
             string MDKHCDC = MaDK_HCDC();
@@ -231,7 +237,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            cbbMaNhom.SelectedValue = dataGridView[1, e.RowIndex].Value.ToString(); ;
+            cbbMaNhom.Text = dataGridView[1, e.RowIndex].Value.ToString();
             txtMaDC.Text = dataGridView[3, e.RowIndex].Value.ToString();
             txtTenDC.Text = dataGridView[4, e.RowIndex].Value.ToString();
             cbbTenGVQL.SelectedValue = dataGridView[2, e.RowIndex].Value.ToString();
@@ -254,7 +260,7 @@ namespace QuanLy_DoAn_TNTH
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
 
-            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.SelectedValue.ToString() + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
             cmd2.ExecuteNonQuery();
 
             SqlCommand cmd3 = new SqlCommand("update DK_DungCu set SoLuong_DC = " + Int32.Parse(txtSoLuong.Text) + " where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
@@ -263,6 +269,12 @@ namespace QuanLy_DoAn_TNTH
             MessageBox.Show("Sửa thành công");
             sql.Close();
             LoaddataGridView();
+        }
+
+        private void btIn_Click(object sender, EventArgs e)
+        {
+            rp_dkDungCu rp = new rp_dkDungCu();
+            rp.ShowPreview();
         }
     }
 }

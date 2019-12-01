@@ -34,6 +34,7 @@ namespace QuanLy_DoAn_TNTH
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -61,10 +62,8 @@ namespace QuanLy_DoAn_TNTH
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTenTB = new System.Windows.Forms.TextBox();
             this.dataGridView_ThietBi = new System.Windows.Forms.DataGridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.label5 = new System.Windows.Forms.Label();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.btnLuu = new System.Windows.Forms.Button();
+            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -76,7 +75,6 @@ namespace QuanLy_DoAn_TNTH
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ThietBi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit1
@@ -124,6 +122,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btIn);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.dateTimePicker);
             this.groupBox1.Controls.Add(this.btnSua);
@@ -160,6 +159,16 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Đăng ký phòng thí nghiệm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.Location = new System.Drawing.Point(322, 196);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 41;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // dateTimePicker
             // 
@@ -361,9 +370,7 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.txtTenTB);
             this.groupBox2.Controls.Add(this.dataGridView_ThietBi);
-            this.groupBox2.Controls.Add(this.simpleButton1);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textEdit2);
             this.groupBox2.Location = new System.Drawing.Point(608, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(392, 236);
@@ -384,7 +391,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             this.txtTenTB.Location = new System.Drawing.Point(135, 31);
             this.txtTenTB.Name = "txtTenTB";
-            this.txtTenTB.Size = new System.Drawing.Size(100, 20);
+            this.txtTenTB.Size = new System.Drawing.Size(151, 20);
             this.txtTenTB.TabIndex = 43;
             // 
             // dataGridView_ThietBi
@@ -396,14 +403,6 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView_ThietBi.TabIndex = 12;
             this.dataGridView_ThietBi.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ThietBi_CellClick);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(293, 29);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Tìm kiếm";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -413,22 +412,15 @@ namespace QuanLy_DoAn_TNTH
             this.label5.TabIndex = 5;
             this.label5.Text = "Tên thiết bị";
             // 
-            // textEdit2
+            // btIn
             // 
-            this.textEdit2.Location = new System.Drawing.Point(135, 31);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(152, 20);
-            this.textEdit2.TabIndex = 1;
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.Location = new System.Drawing.Point(322, 196);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 41;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.UseVisualStyleBackColor = true;
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            this.btIn.Location = new System.Drawing.Point(419, 196);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 23);
+            this.btIn.TabIndex = 42;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // US_dkPTN
             // 
@@ -452,7 +444,6 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ThietBi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -469,9 +460,7 @@ namespace QuanLy_DoAn_TNTH
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit3;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.TextEdit textEdit3;
         private System.Windows.Forms.DataGridView dataGridView_ThietBi;
@@ -496,5 +485,6 @@ namespace QuanLy_DoAn_TNTH
         private System.Windows.Forms.TextBox txtTenTB;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Button btnLuu;
+        private System.Windows.Forms.Button btIn;
     }
 }
