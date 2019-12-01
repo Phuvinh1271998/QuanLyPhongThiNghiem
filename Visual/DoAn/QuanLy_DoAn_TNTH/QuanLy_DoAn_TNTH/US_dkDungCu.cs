@@ -46,15 +46,7 @@ namespace QuanLy_DoAn_TNTH
             cbbMaNhom.ValueMember = "MaNhom";
             cbbMaNhom.DataSource = dt;
             txtTenNhom.Text = dt.Rows[cbbMaNhom.SelectedIndex]["MaNhom"].ToString();
-            //-----------------DungCu
-            cm = new SqlCommand("select MaDC,TenDC from DungCu", sql);
-            adap = new SqlDataAdapter(cm);
-            dt = new DataTable();
-            adap.Fill(dt);
-            cbbTenDC.DisplayMember = "TenDC";
-            cbbTenDC.ValueMember = "MaDC";
-            cbbTenDC.DataSource = dt;
-            txtMaDC.Text = dt.Rows[cbbTenDC.SelectedIndex]["MaDC"].ToString();
+            
             //-------------------GVQL
             cm = new SqlCommand("select MaGVQL,TenGVQL from GV_QLTN", sql);
             adap = new SqlDataAdapter(cm);
@@ -63,10 +55,20 @@ namespace QuanLy_DoAn_TNTH
             cbbTenGVQL.DisplayMember = "TenGVQL";
             cbbTenGVQL.ValueMember = "MaGVQL";
             cbbTenGVQL.DataSource = dt;
+
+            cm = new SqlCommand("select* from DungCu", sql);
+            adap = new SqlDataAdapter(cm);
+            dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource = dt;
+
             sql.Close();
+            txtTenDC.Enabled = false;
+            txtMaDC.Enabled = false;
             txtMaDK_HCDC.Enabled = false;
             txtMaGVQL.Enabled = false;
             txtTenNhom.Enabled = false;
+            btnLuu.Enabled = false;
             LoaddataGridView();
         }
 
@@ -148,9 +150,7 @@ namespace QuanLy_DoAn_TNTH
             return check;
         }
         private void btThem_Click(object sender, EventArgs e)
-        {
-            string MNhom = cbbMaNhom.SelectedValue.ToString();
-            string MDC = cbbTenDC.SelectedValue.ToString();
+        {            
             int sl;
             if (txtSoLuong.Text.Trim() != "")
             {
@@ -161,8 +161,9 @@ namespace QuanLy_DoAn_TNTH
                 MessageBox.Show("Nhập Số Lượng !");
                 return;
             }
+            string MNhom = cbbMaNhom.SelectedValue.ToString();
+            string MDC = txtMaDC.Text;
             string MGV = cbbTenGVQL.SelectedValue.ToString().Trim();
-
             string MDKHCDC = MaDK_HCDC();
 
             if (!exedata($"insert into DK_HCDC values('{MDKHCDC}','{MNhom}','{MGV}')"))
@@ -185,28 +186,79 @@ namespace QuanLy_DoAn_TNTH
             DialogResult dr = MessageBox.Show("Bạn có muốn Xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
+                string ma = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
+
                 SqlConnection sql = DBUtils.GetDBConnection();
                 sql.Open();
-                SqlCommand cmd1 = new SqlCommand("delete from DK_DungCu where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
-                cmd1.ExecuteNonQuery();
-                SqlCommand cmd2 = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
-                cmd2.ExecuteNonQuery();
+                SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat where MaDK_HCDC = '{ma}'", sql);
+                SqlDataAdapter adap = new SqlDataAdapter(cm);
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                string so = dt.Rows[0]["SoLuong"].ToString();
+
+                cm = new SqlCommand("delete from DK_DungCu where MaDK_HCDC = '" + ma + "'", sql);
+                cm.ExecuteNonQuery();
+
+                if (Int32.Parse(so) == 0)
+                {
+                    cm = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + ma + "'", sql);
+                    cm.ExecuteNonQuery();
+                }
+
                 sql.Close();
                 MessageBox.Show("Xóa thành công");
-                LoaddataGridView();
+                LoaddataGridView();                
             }
         }
 
         private void btSua_Click(object sender, EventArgs e)
         {
+            if (this.dataGridView.SelectedRows.Count > 0)
+            {
+                btThem.Enabled = false;
+                btXoa.Enabled = false;
+                dataGridView.Enabled = false;
+                btnLuu.Enabled = true;
+            }
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtMaDC.Text = dataGridView1[0, e.RowIndex].Value.ToString();
+            txtTenDC.Text = dataGridView1[1, e.RowIndex].Value.ToString();
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            cbbMaNhom.SelectedValue = dataGridView[1, e.RowIndex].Value.ToString(); ;
+            txtMaDC.Text = dataGridView[3, e.RowIndex].Value.ToString();
+            txtTenDC.Text = dataGridView[4, e.RowIndex].Value.ToString();
+            cbbTenGVQL.SelectedValue = dataGridView[2, e.RowIndex].Value.ToString();
+            txtSoLuong.Text = dataGridView[5, e.RowIndex].Value.ToString();
+            txtMaDK_HCDC.Text = dataGridView[0, e.RowIndex].Value.ToString();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (txtSoLuong.Text == "")
+            {
+                MessageBox.Show("Nhập Số Lượng !");
+                return;
+            }
+            btThem.Enabled = true;
+            btXoa.Enabled = true;
+            dataGridView1.Enabled = true;
+            dataGridView.Enabled = true;
+            btnLuu.Enabled = false;
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
 
-            SqlCommand cmd3 = new SqlCommand("update DK_DungCu set SoLuong_DC = '" + txtSoLuong.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
-            cmd3.ExecuteNonQuery();
-
-            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.SelectedValue.ToString() + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
             cmd2.ExecuteNonQuery();
+
+            SqlCommand cmd3 = new SqlCommand("update DK_DungCu set SoLuong_DC = " + Int32.Parse(txtSoLuong.Text) + " where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+            cmd3.ExecuteNonQuery();
 
             MessageBox.Show("Sửa thành công");
             sql.Close();

@@ -31,7 +31,7 @@ namespace QuanLy_DoAn_TNTH
         {
             SqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
-            string str = "select * from NhomSV";
+            string str = "select SinhVien.MaNhom,NhomSV.TenNhom,COUNT(SinhVien.MaNhom) as SoLuong from NhomSV, SinhVien where SinhVien.MaNhom = NhomSV.MaNhom group by NhomSV.TenNhom,SinhVien.MaNhom";
             SqlCommand cmd = new SqlCommand(str, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
