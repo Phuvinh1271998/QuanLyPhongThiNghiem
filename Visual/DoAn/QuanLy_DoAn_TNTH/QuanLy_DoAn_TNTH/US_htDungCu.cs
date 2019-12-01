@@ -53,8 +53,10 @@ namespace QuanLy_DoAn_TNTH
                 sql.Open();
                 SqlCommand cmd1 = new SqlCommand("delete from DK_DUNGCU where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
                 cmd1.ExecuteNonQuery();
-                SqlCommand cmd2 = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
+                SqlCommand cmd2 = new SqlCommand("delete from DK_HoaChat where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
                 cmd2.ExecuteNonQuery();
+                SqlCommand cmd3 = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
+                cmd3.ExecuteNonQuery();
                 sql.Close();
                 MessageBox.Show("Xóa thành công");
                 LoaddataGridView();

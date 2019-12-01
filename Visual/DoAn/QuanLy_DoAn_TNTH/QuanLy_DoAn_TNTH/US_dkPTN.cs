@@ -58,7 +58,7 @@ namespace QuanLy_DoAn_TNTH
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbTenPhong.DisplayMember = "TenPTN";
+            cbTenPhong.DisplayMember = "MaPTN";
             cbTenPhong.ValueMember = "MaPTN";
             cbTenPhong.DataSource = dt;
             //-------------------GVQL
@@ -66,7 +66,7 @@ namespace QuanLy_DoAn_TNTH
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbTenGV.DisplayMember = "TenGVQL";
+            cbTenGV.DisplayMember = "MaGVQL";
             cbTenGV.ValueMember = "MaGVQL";
             cbTenGV.DataSource = dt;
             //---------------------Buổi
@@ -74,7 +74,7 @@ namespace QuanLy_DoAn_TNTH
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbBuoi.DisplayMember = "Tiet";
+            cbBuoi.DisplayMember = "MaBuoi";
             cbBuoi.ValueMember = "MaBuoi";
             cbBuoi.DataSource = dt;
             //-------------------grid TB

@@ -280,17 +280,14 @@ namespace QuanLy_DoAn_TNTH
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(21, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 13);
+            this.label8.Size = new System.Drawing.Size(111, 13);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Tên giảng viên quản lý";
+            this.label8.Text = "Mã giảng viên quản lý";
             // 
             // comboBoxEdit4
             // 
             this.comboBoxEdit4.Location = new System.Drawing.Point(142, 151);
             this.comboBoxEdit4.Name = "comboBoxEdit4";
-            // 
-            // 
-            // 
             this.comboBoxEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit4.Size = new System.Drawing.Size(152, 20);
@@ -334,9 +331,6 @@ namespace QuanLy_DoAn_TNTH
             // 
             this.comboBoxEdit3.Location = new System.Drawing.Point(431, 73);
             this.comboBoxEdit3.Name = "comboBoxEdit3";
-            // 
-            // 
-            // 
             this.comboBoxEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit3.Size = new System.Drawing.Size(152, 20);
@@ -346,9 +340,6 @@ namespace QuanLy_DoAn_TNTH
             // 
             this.comboBoxEdit2.Location = new System.Drawing.Point(431, 31);
             this.comboBoxEdit2.Name = "comboBoxEdit2";
-            // 
-            // 
-            // 
             this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit2.Size = new System.Drawing.Size(152, 20);
@@ -358,9 +349,6 @@ namespace QuanLy_DoAn_TNTH
             // 
             this.comboBoxEdit1.Location = new System.Drawing.Point(142, 73);
             this.comboBoxEdit1.Name = "comboBoxEdit1";
-            // 
-            // 
-            // 
             this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.comboBoxEdit1.Size = new System.Drawing.Size(152, 20);
@@ -410,6 +398,7 @@ namespace QuanLy_DoAn_TNTH
             // 
             this.simpleButton1.Location = new System.Drawing.Point(293, 29);
             this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
             this.simpleButton1.TabIndex = 11;
             this.simpleButton1.Text = "Tìm kiếm";
             // 
