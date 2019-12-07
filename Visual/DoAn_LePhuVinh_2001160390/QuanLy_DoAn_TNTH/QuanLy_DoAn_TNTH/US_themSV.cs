@@ -86,40 +86,48 @@ namespace QuanLy_DoAn_TNTH
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string masv = txtMaSV.Text.Trim();
-            string tensv = txtTenSV.Text.Trim();
-            DateTime ngaysinh = dateNgaySinh.Value;
-            int hocky = Int32.Parse(txtHocKy.Text.Trim()); ;
-            int namhoc = Int32.Parse(txtNamHoc.Text.Trim()); ;
-            string manhom = cbTenNhom.SelectedValue.ToString().Trim();
-            string malop = cbLop.SelectedValue.ToString().Trim();
-            SqlConnection sql = DBUtils.GetDBConnection();
-            sql.Open();
-            SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from SinhVien where MaNhom = '{manhom}'", sql);
-            SqlDataAdapter adap = new SqlDataAdapter(cm);
-            DataTable dt = new DataTable();
-            adap.Fill(dt);
-            string so = dt.Rows[0]["SoLuong"].ToString();
-            if (Int32.Parse(so) >= 3)
+            try
             {
-                MessageBox.Show("Nhóm Đủ người !");
-                return;
-            }                
+                string masv = txtMaSV.Text.Trim();
+                string tensv = txtTenSV.Text.Trim();
+                DateTime ngaysinh = dateNgaySinh.Value;
+                int hocky = Int32.Parse(txtHocKy.Text.Trim()); ;
+                int namhoc = Int32.Parse(txtNamHoc.Text.Trim()); ;
+                string manhom = cbTenNhom.SelectedValue.ToString().Trim();
+                string malop = cbLop.SelectedValue.ToString().Trim();
+                SqlConnection sql = DBUtils.GetDBConnection();
+                sql.Open();
+                SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from SinhVien where MaNhom = '{manhom}'", sql);
+                SqlDataAdapter adap = new SqlDataAdapter(cm);
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                string so = dt.Rows[0]["SoLuong"].ToString();
+                if (Int32.Parse(so) >= 3)
+                {
+                    MessageBox.Show("Nhóm Đủ người !");
+                    return;
+                }
 
-            if (!exedata($"insert into SinhVien values('{masv}',N'{tensv}','{ngaysinh}',{hocky},{namhoc},'{manhom}','{malop}')"))
-                MessageBox.Show("Có Lỗi !");
-            else
-                MessageBox.Show("Thành công !");
+                if (!exedata($"insert into SinhVien values('{masv}',N'{tensv}','{ngaysinh}',{hocky},{namhoc},'{manhom}','{malop}')"))
+                {
+                    MessageBox.Show("Có Lỗi !");
+                    return;
+                }
+                else
+                    MessageBox.Show("Thành công !");
+                //-------------------grid TB
+                cm = new SqlCommand("select * from SinhVien", sql);
+                adap = new SqlDataAdapter(cm);
+                dt = new DataTable();
+                adap.Fill(dt);
+                dataGridView1.DataSource = dt;
 
-            //-------------------grid TB
-            cm = new SqlCommand("select * from SinhVien", sql);
-            adap = new SqlDataAdapter(cm);            
-            dt = new DataTable();
-            adap.Fill(dt);
-            dataGridView1.DataSource = dt;
-
-            sql.Close();
-                        
+                sql.Close();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Điền đủ thông tin !");
+            }                       
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -162,37 +170,45 @@ namespace QuanLy_DoAn_TNTH
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
-            sql.Open();
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                string masv = txtMaSV.Text.Trim();
-                string tensv = txtTenSV.Text.Trim();
-                DateTime ngaysinh = dateNgaySinh.Value;
-                int hocky = Int32.Parse(txtHocKy.Text.Trim()); ;
-                int namhoc = Int32.Parse(txtNamHoc.Text.Trim()); ;
-                string manhom = cbTenNhom.SelectedValue.ToString().Trim();
-                string malop = cbLop.SelectedValue.ToString().Trim();
-                //SqlCommand sc = new SqlCommand($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'", sql);
-                //sc.ExecuteNonQuery();
+                SqlConnection sql = DBUtils.GetDBConnection();
+                sql.Open();
+                if (this.dataGridView1.SelectedRows.Count > 0)
+                {
+                    string masv = txtMaSV.Text.Trim();
+                    string tensv = txtTenSV.Text.Trim();
+                    DateTime ngaysinh = dateNgaySinh.Value;
+                    int hocky = Int32.Parse(txtHocKy.Text.Trim()); ;
+                    int namhoc = Int32.Parse(txtNamHoc.Text.Trim()); ;
+                    string manhom = cbTenNhom.SelectedValue.ToString().Trim();
+                    string malop = cbLop.SelectedValue.ToString().Trim();
+                    //SqlCommand sc = new SqlCommand($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'", sql);
+                    //sc.ExecuteNonQuery();
 
-                if (!exedata($"update SinhVien set TenSV='{tensv}',NgaySinh='{ngaysinh}',HocKy={hocky},NamHoc={namhoc},MaNhom='{manhom}',MaLop='{malop}' where MaSV='{masv}'"))
-                    MessageBox.Show("Có Lỗi !");
-                else
-                    MessageBox.Show("Thành công !");
+                    if (!exedata($"update SinhVien set TenSV=N'{tensv}',NgaySinh='{ngaysinh}',HocKy={hocky},NamHoc={namhoc},MaNhom='{manhom}',MaLop='{malop}' where MaSV='{masv}'"))
+                        MessageBox.Show("Có Lỗi !");
+                    else
+                        MessageBox.Show("Thành công !");
 
-                SqlCommand cm = new SqlCommand("select * from SinhVien", sql);
-                SqlDataAdapter adap = new SqlDataAdapter(cm);
-                DataTable dt = new DataTable();
-                adap.Fill(dt);
-                dataGridView1.DataSource = dt;
+                    SqlCommand cm = new SqlCommand("select * from SinhVien", sql);
+                    SqlDataAdapter adap = new SqlDataAdapter(cm);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    dataGridView1.DataSource = dt;
 
-                sql.Close();
+                    sql.Close();
 
-                txtMaSV.Enabled = true;
-                btnLuu.Enabled = false;
-                btnSua.Enabled = true;
-                dataGridView1.Enabled = true;
+                    txtMaSV.Enabled = true;
+                    btnLuu.Enabled = false;
+                    btnSua.Enabled = true;
+                    dataGridView1.Enabled = true;
+
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Điền đủ thông tin !");
             }
         }
 
@@ -205,6 +221,52 @@ namespace QuanLy_DoAn_TNTH
             cbTenNhom.SelectedValue = dataGridView1[5, e.RowIndex].Value.ToString();
             txtTenSV.Text = dataGridView1[1, e.RowIndex].Value.ToString();
             cbLop.SelectedValue = dataGridView1[6, e.RowIndex].Value.ToString();            
+        }
+
+        private void txtTenSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtHocKy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHocKy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (txtHocKy.TextLength >= 2)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMaSV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if(txtMaSV.TextLength >= 10)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNamHoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (txtNamHoc.TextLength >= 4)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -54,12 +54,12 @@ namespace QuanLy_DoAn_TNTH
             cbbMaNhom.DataSource = dt;
             
             //-------------------GVQL
-            cm = new SqlCommand("select MaGVQL,TenGVQL from GV_QLTN", sql);
+            cm = new SqlCommand("select * from NhanVien", sql);
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbbTenGVQL.DisplayMember = "TenGVQL";
-            cbbTenGVQL.ValueMember = "MaGVQL";
+            cbbTenGVQL.DisplayMember = "TenNV";
+            cbbTenGVQL.ValueMember = "MaNV";
             cbbTenGVQL.DataSource = dt;
 
             cm = new SqlCommand("select* from DungCu", sql);
@@ -78,11 +78,22 @@ namespace QuanLy_DoAn_TNTH
             LoaddataGridView();
         }
 
+        private void load2()
+        {
+            SqlConnection sql = DBUtils.GetDBConnection();
+            sql.Open();
+            SqlCommand cm = new SqlCommand("select* from DungCu", sql);
+            SqlDataAdapter adap = new SqlDataAdapter(cm);
+            DataTable dt = new DataTable();
+            adap.Fill(dt);
+            dataGridView1.DataSource = dt;
+            sql.Close();
+        }
         public void LoaddataGridView()
         {
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
-            string str = "select dk1.MaDK_HCDC, MaNhom, MaGVQL, dk2.MaDC, hc.TenDC, SoLuong_DC from DK_HCDC as dk1, DK_DungCu as dk2, DungCu as hc where dk1.MaDK_HCDC = dk2.MaDK_HCDC and dk2.MaDC = hc.MaDC";
+            string str = "select dk1.MaDK_HCDC, MaNhom, MaNV, dk2.MaDC, hc.TenDC, SoLuong_DKDC from DK_HCDC as dk1, DK_DungCu as dk2, DungCu as hc where dk1.MaDK_HCDC = dk2.MaDK_HCDC and dk2.MaDC = hc.MaDC";
             SqlCommand cmd = new SqlCommand(str, sql);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -95,11 +106,11 @@ namespace QuanLy_DoAn_TNTH
         {
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
-            SqlCommand cm = new SqlCommand("select * from GV_QLTN", sql);
+            SqlCommand cm = new SqlCommand("select * from NhanVien", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
             DataTable dt = new DataTable();
             adap.Fill(dt);
-            txtMaGVQL.Text = dt.Rows[cbbTenGVQL.SelectedIndex]["MaGVQL"].ToString();
+            txtMaGVQL.Text = dt.Rows[cbbTenGVQL.SelectedIndex]["MaNV"].ToString();
         }
 
         public string MaDK_HCDC()
@@ -156,35 +167,43 @@ namespace QuanLy_DoAn_TNTH
             return check;
         }
         private void btThem_Click(object sender, EventArgs e)
-        {            
-            int sl;
-            if (txtSoLuong.Text.Trim() != "")
+        {
+            try
             {
-                sl = Int32.Parse(txtSoLuong.Text.Trim());
-            }
-            else
-            {
-                MessageBox.Show("Nhập Số Lượng !");
-                return;
-            }
-            string MNhom = cbbMaNhom.Text;
-            string MDC = txtMaDC.Text;
-            string MGV = cbbTenGVQL.SelectedValue.ToString().Trim();
-            string MDKHCDC = MaDK_HCDC();
+                int sl;
+                if (txtSoLuong.Text.Trim() != "")
+                {
+                    sl = Int32.Parse(txtSoLuong.Text.Trim());
+                }
+                else
+                {
+                    MessageBox.Show("Nhập Số Lượng !");
+                    return;
+                }
+                string MNhom = cbbMaNhom.Text;
+                string MDC = txtMaDC.Text;
+                string MGV = cbbTenGVQL.SelectedValue.ToString().Trim();
+                string MDKHCDC = MaDK_HCDC();
 
-            if (!exedata($"insert into DK_HCDC values('{MDKHCDC}','{MNhom}','{MGV}')"))
-            {
-                MessageBox.Show("Có Lỗi (DK_HCDC) !");
-                return;
+                if (!exedata($"insert into DK_HCDC values('{MDKHCDC}','{MNhom}','{MGV}')"))
+                {
+                    MessageBox.Show("Có Lỗi (DK_HCDC) !");
+                    return;
+                }
+                else if (!exedata($"insert into DK_DungCu values('{MDKHCDC}','{MDC}',{sl})"))
+                {
+                    MessageBox.Show("Có Lỗi (DK_DungCu)!");
+                    return;
+                }
+                else
+                    MessageBox.Show("Thêm thành công");
             }
-            else if (!exedata($"insert into DK_DungCu values('{MDKHCDC}','{MDC}',{sl})"))
+            catch (Exception)
             {
-                MessageBox.Show("Có Lỗi (DK_DungCu)!");
-                return;
+                MessageBox.Show("Điền đủ thông tin !");
             }
-            else
-                MessageBox.Show("Thêm thành công");
             LoaddataGridView();
+            load2();
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -193,7 +212,7 @@ namespace QuanLy_DoAn_TNTH
             if (dr == DialogResult.Yes)
             {
                 string ma = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
-
+                string MDC = txtMaDC.Text;
                 SqlConnection sql = DBUtils.GetDBConnection();
                 sql.Open();
                 SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat where MaDK_HCDC = '{ma}'", sql);
@@ -202,7 +221,7 @@ namespace QuanLy_DoAn_TNTH
                 adap.Fill(dt);
                 string so = dt.Rows[0]["SoLuong"].ToString();
 
-                cm = new SqlCommand("delete from DK_DungCu where MaDK_HCDC = '" + ma + "'", sql);
+                cm = new SqlCommand($"delete from DK_DungCu where MaDK_HCDC = '{ma}' and MaDC = '{MDC}'", sql);
                 cm.ExecuteNonQuery();
 
                 if (Int32.Parse(so) == 0)
@@ -213,7 +232,8 @@ namespace QuanLy_DoAn_TNTH
 
                 sql.Close();
                 MessageBox.Show("Xóa thành công");
-                LoaddataGridView();                
+                LoaddataGridView();
+                load2();
             }
         }
 
@@ -247,28 +267,36 @@ namespace QuanLy_DoAn_TNTH
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtSoLuong.Text == "")
+            try
             {
-                MessageBox.Show("Nhập Số Lượng !");
-                return;
+                if (txtSoLuong.Text == "")
+                {
+                    MessageBox.Show("Nhập Số Lượng !");
+                    return;
+                }
+                btThem.Enabled = true;
+                btXoa.Enabled = true;
+                dataGridView1.Enabled = true;
+                dataGridView.Enabled = true;
+                btnLuu.Enabled = false;
+                SqlConnection sql = DBUtils.GetDBConnection();
+                sql.Open();
+
+                SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaNV='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+                cmd2.ExecuteNonQuery();
+
+                SqlCommand cmd3 = new SqlCommand("update DK_DungCu set SoLuong_DKDC = " + Int32.Parse(txtSoLuong.Text) + " where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
+                cmd3.ExecuteNonQuery();
+
+                MessageBox.Show("Sửa thành công");
+                sql.Close();
             }
-            btThem.Enabled = true;
-            btXoa.Enabled = true;
-            dataGridView1.Enabled = true;
-            dataGridView.Enabled = true;
-            btnLuu.Enabled = false;
-            SqlConnection sql = DBUtils.GetDBConnection();
-            sql.Open();
-
-            SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaGVQL='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
-            cmd2.ExecuteNonQuery();
-
-            SqlCommand cmd3 = new SqlCommand("update DK_DungCu set SoLuong_DC = " + Int32.Parse(txtSoLuong.Text) + " where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);
-            cmd3.ExecuteNonQuery();
-
-            MessageBox.Show("Sửa thành công");
-            sql.Close();
+            catch (Exception)
+            {
+                MessageBox.Show("Điền đủ thông tin !");
+            }
             LoaddataGridView();
+            load2();
         }
 
         private void btIn_Click(object sender, EventArgs e)

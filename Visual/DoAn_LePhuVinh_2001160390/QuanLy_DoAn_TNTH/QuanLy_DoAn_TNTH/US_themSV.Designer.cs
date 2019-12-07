@@ -167,6 +167,7 @@ namespace QuanLy_DoAn_TNTH
             this.txtNamHoc.Name = "txtNamHoc";
             this.txtNamHoc.Size = new System.Drawing.Size(171, 20);
             this.txtNamHoc.TabIndex = 32;
+            this.txtNamHoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamHoc_KeyPress);
             // 
             // txtTenSV
             // 
@@ -174,6 +175,7 @@ namespace QuanLy_DoAn_TNTH
             this.txtTenSV.Name = "txtTenSV";
             this.txtTenSV.Size = new System.Drawing.Size(151, 20);
             this.txtTenSV.TabIndex = 29;
+            this.txtTenSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTenSV_KeyPress);
             // 
             // txtHocKy
             // 
@@ -181,6 +183,8 @@ namespace QuanLy_DoAn_TNTH
             this.txtHocKy.Name = "txtHocKy";
             this.txtHocKy.Size = new System.Drawing.Size(151, 20);
             this.txtHocKy.TabIndex = 28;
+            this.txtHocKy.TextChanged += new System.EventHandler(this.txtHocKy_TextChanged);
+            this.txtHocKy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHocKy_KeyPress);
             // 
             // txtMaSV
             // 
@@ -188,6 +192,7 @@ namespace QuanLy_DoAn_TNTH
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.Size = new System.Drawing.Size(151, 20);
             this.txtMaSV.TabIndex = 9;
+            this.txtMaSV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaSV_KeyPress);
             // 
             // labelControl7
             // 

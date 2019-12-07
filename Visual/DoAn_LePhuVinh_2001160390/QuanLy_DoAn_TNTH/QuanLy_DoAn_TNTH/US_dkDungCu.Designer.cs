@@ -30,6 +30,7 @@ namespace QuanLy_DoAn_TNTH
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btIn = new System.Windows.Forms.Button();
             this.txtMaDC = new System.Windows.Forms.TextBox();
             this.cbbTenGVQL = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -51,7 +52,6 @@ namespace QuanLy_DoAn_TNTH
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTenDC = new System.Windows.Forms.TextBox();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -94,6 +94,17 @@ namespace QuanLy_DoAn_TNTH
             this.groupControl2.Size = new System.Drawing.Size(617, 245);
             this.groupControl2.TabIndex = 21;
             this.groupControl2.Text = "Đăng ký dụng cụ";
+            // 
+            // btIn
+            // 
+            this.btIn.Location = new System.Drawing.Point(446, 192);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 39);
+            this.btIn.TabIndex = 34;
+            this.btIn.TabStop = false;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // txtMaDC
             // 
@@ -161,9 +172,9 @@ namespace QuanLy_DoAn_TNTH
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(5, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 26;
-            this.label7.Text = "Mã GVQL";
+            this.label7.Text = "Mã NV";
             // 
             // txtSoLuong
             // 
@@ -188,9 +199,9 @@ namespace QuanLy_DoAn_TNTH
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(352, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Tên GVQL";
+            this.label6.Text = "Tên NV";
             // 
             // txtTenNhom
             // 
@@ -279,17 +290,6 @@ namespace QuanLy_DoAn_TNTH
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btIn
-            // 
-            this.btIn.Location = new System.Drawing.Point(446, 192);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(75, 39);
-            this.btIn.TabIndex = 34;
-            this.btIn.TabStop = false;
-            this.btIn.Text = "In";
-            this.btIn.UseVisualStyleBackColor = true;
-            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // US_dkDungCu
             // 
