@@ -215,7 +215,7 @@ namespace QuanLy_DoAn_TNTH
                 string MDC = txtMaDC.Text;
                 SqlConnection sql = DBUtils.GetDBConnection();
                 sql.Open();
-                SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat where MaDK_HCDC = '{ma}'", sql);
+                SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat,DK_DungCu where DK_DungCu.MaDK_HCDC = '{ma}' group by DK_DungCu.MaDK_HCDC,DK_HoaChat.MaDK_HCDC", sql);
                 SqlDataAdapter adap = new SqlDataAdapter(cm);
                 DataTable dt = new DataTable();
                 adap.Fill(dt);

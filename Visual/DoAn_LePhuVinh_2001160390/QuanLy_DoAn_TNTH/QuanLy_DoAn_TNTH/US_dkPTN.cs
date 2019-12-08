@@ -59,32 +59,26 @@ namespace QuanLy_DoAn_TNTH
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbTenPhong.DisplayMember = "MaPTN";
+            cbTenPhong.DisplayMember = "TenPTN";
             cbTenPhong.ValueMember = "MaPTN";
             cbTenPhong.DataSource = dt;
             //-------------------GVQL
-            cm = new SqlCommand("select MaGVQL,TenGVQL from GV_QLTN", sql);
+            cm = new SqlCommand("select * from NhanVien", sql);
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbTenGV.DisplayMember = "MaGVQL";
-            cbTenGV.ValueMember = "MaGVQL";
+            cbTenGV.DisplayMember = "TenNV";
+            cbTenGV.ValueMember = "MaNV";
             cbTenGV.DataSource = dt;
             //---------------------Buổi
             cm = new SqlCommand("select MaBuoi,Tiet from Buoi", sql);
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
             adap.Fill(dt);
-            cbBuoi.DisplayMember = "MaBuoi";
+            cbBuoi.DisplayMember = "Tiet";
             cbBuoi.ValueMember = "MaBuoi";
             cbBuoi.DataSource = dt;
             //-------------------grid TB
-            cm = new SqlCommand("select MaTB,TenTB from ThietBi", sql);
-            adap = new SqlDataAdapter(cm);
-            dt = new DataTable();
-            adap.Fill(dt);
-            dataGridView_ThietBi.DataSource = dt;
-
             cm = new SqlCommand("select * from ThietBi", sql);
             adap = new SqlDataAdapter(cm);
             dt = new DataTable();
@@ -139,12 +133,12 @@ namespace QuanLy_DoAn_TNTH
                 MessageBox.Show("Nhập Ngày Khác !");
                 return;
             }
-            string nhom = cbTenNhom.SelectedValue.ToString().Trim(); ;
+            string nhom = cbTenNhom.SelectedValue.ToString().Trim();
             string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
             DateTime ngay = dateTimePicker.Value;
             string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
-            string phong = cbTenPhong.SelectedValue.ToString().Trim(); ;
-            string buoi = cbBuoi.SelectedValue.ToString().Trim(); ;
+            string phong = cbTenPhong.SelectedValue.ToString().Trim();
+            string buoi = cbBuoi.SelectedValue.ToString().Trim(); 
             string tb = txtMaTB.Text.Trim();
             int sl = Int32.Parse(txtSoLuong.Text.Trim());
 
@@ -173,21 +167,30 @@ namespace QuanLy_DoAn_TNTH
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (this.dataGridView2.SelectedRows.Count > 0)
+            try
             {
-                DateTime ngay = DateTime.Parse(this.dataGridView2.Rows[this.dataGridView2.CurrentRow.Index].Cells[0].Value.ToString());
-                if (!exedata($"delete from DK_PTN where NgayDK='{ngay}'"))
-                    MessageBox.Show("Có Lỗi !");
-                else
-                    MessageBox.Show("Thành công !");
-                SqlConnection sql = DBUtils.GetDBConnection();
-                sql.Open();
-                SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
-                SqlDataAdapter adap = new SqlDataAdapter(cm);
-                DataTable dt = new DataTable();
-                adap.Fill(dt);
-                dataGridView2.DataSource = dt;
-                sql.Close();
+                if (this.dataGridView2.SelectedRows.Count > 0)
+                {
+                    DateTime ngay = DateTime.Parse(this.dataGridView2.Rows[this.dataGridView2.CurrentRow.Index].Cells[0].Value.ToString());
+                    string nhom = cbTenNhom.SelectedValue.ToString().Trim();
+                    string buoi = cbBuoi.SelectedValue.ToString().Trim();
+                    if (!exedata($"delete from DK_PTN where NgayDK='{ngay}' and MaNhom='{nhom}' and MaBuoi='{buoi}'"))
+                        MessageBox.Show("Có Lỗi !");
+                    else
+                        MessageBox.Show("Thành công !");
+                    SqlConnection sql = DBUtils.GetDBConnection();
+                    sql.Open();
+                    SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
+                    SqlDataAdapter adap = new SqlDataAdapter(cm);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    dataGridView2.DataSource = dt;
+                    sql.Close();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Điền đủ thông tin !");
             }
         }
 
@@ -224,36 +227,43 @@ namespace QuanLy_DoAn_TNTH
             sql.Open();
             if (this.dataGridView2.SelectedRows.Count > 0)
             {
-                string nhom = cbTenNhom.SelectedValue.ToString().Trim(); ;
-                string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
-                DateTime ngay = dateTimePicker.Value;
-                string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
-                string phong = cbTenPhong.SelectedValue.ToString().Trim(); ;
-                string buoi = cbBuoi.SelectedValue.ToString().Trim(); ;
-                string tb = txtMaTB.Text.Trim();
-                int sl = Int32.Parse(txtSoLuong.Text.Trim());
-                //SqlCommand sc = new SqlCommand($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'", sql);
-                //sc.ExecuteNonQuery();
+                try
+                {
+                    string nhom = cbTenNhom.SelectedValue.ToString().Trim(); ;
+                    string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
+                    DateTime ngay = dateTimePicker.Value;
+                    string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
+                    string phong = cbTenPhong.SelectedValue.ToString().Trim(); ;
+                    string buoi = cbBuoi.SelectedValue.ToString().Trim(); ;
+                    string tb = txtMaTB.Text.Trim();
+                    int sl = Int32.Parse(txtSoLuong.Text.Trim());
+                    //SqlCommand sc = new SqlCommand($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'", sql);
+                    //sc.ExecuteNonQuery();
 
-                if (!exedata($"update DK_PTN set MaGVQL='{gv}',SoLuongTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'"))
-                    MessageBox.Show("Có Lỗi !");
-                else
-                    MessageBox.Show("Thành công !");
+                    if (!exedata($"update DK_PTN set MaGVQL='{gv}',SoLuongDKTB={sl} where NgayDK='{ngay}' and MaBuoi='{buoi}' and MaNhom='{nhom}' and MaLoaiTN='{loai}' and MaPTN='{phong}' and MaTB='{tb}'"))
+                        MessageBox.Show("Có Lỗi !");
+                    else
+                        MessageBox.Show("Thành công !");
 
-                SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
-                SqlDataAdapter adap = new SqlDataAdapter(cm);
-                DataTable dt = new DataTable();
-                adap.Fill(dt);
-                dataGridView2.DataSource = dt;
-                sql.Close();
+                    SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
+                    SqlDataAdapter adap = new SqlDataAdapter(cm);
+                    DataTable dt = new DataTable();
+                    adap.Fill(dt);
+                    dataGridView2.DataSource = dt;
+                    sql.Close();
 
-                cbTenNhom.Enabled = true;
-                cbLoaiTN.Enabled = true;
-                dateTimePicker.Enabled = true;               
-                cbTenPhong.Enabled = true;
-                cbBuoi.Enabled = true;
-                btnLuu.Enabled = false;
-                dataGridView2.Enabled = true;
+                    cbTenNhom.Enabled = true;
+                    cbLoaiTN.Enabled = true;
+                    dateTimePicker.Enabled = true;
+                    cbTenPhong.Enabled = true;
+                    cbBuoi.Enabled = true;
+                    btnLuu.Enabled = false;
+                    dataGridView2.Enabled = true;
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Điền đủ thông tin !");
+                }
             }
         }
 
@@ -261,6 +271,11 @@ namespace QuanLy_DoAn_TNTH
         {
             rp_dkPTN rp = new rp_dkPTN();
             rp.ShowPreview();
+        }
+
+        private void cbBuoi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
