@@ -302,9 +302,9 @@ namespace QuanLy_DoAn_TNTH
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(21, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.Size = new System.Drawing.Size(113, 13);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Mã giảng viên quản lý";
+            this.label8.Text = "Tên nhân viên quản lý";
             // 
             // comboBoxEdit4
             // 
