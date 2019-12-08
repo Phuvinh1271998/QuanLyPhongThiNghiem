@@ -34,6 +34,7 @@ namespace QuanLy_DoAn_TNTH
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btIn = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnSua = new System.Windows.Forms.Button();
@@ -63,7 +64,6 @@ namespace QuanLy_DoAn_TNTH
             this.txtTenTB = new System.Windows.Forms.TextBox();
             this.dataGridView_ThietBi = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -160,6 +160,16 @@ namespace QuanLy_DoAn_TNTH
             this.groupBox1.Text = "Đăng ký phòng thí nghiệm";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // btIn
+            // 
+            this.btIn.Location = new System.Drawing.Point(419, 196);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 23);
+            this.btIn.TabIndex = 42;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
             // btnLuu
             // 
             this.btnLuu.Location = new System.Drawing.Point(322, 196);
@@ -229,6 +239,7 @@ namespace QuanLy_DoAn_TNTH
             this.cbBuoi.Name = "cbBuoi";
             this.cbBuoi.Size = new System.Drawing.Size(152, 21);
             this.cbBuoi.TabIndex = 35;
+            this.cbBuoi.SelectedIndexChanged += new System.EventHandler(this.cbBuoi_SelectedIndexChanged);
             // 
             // cbTenPhong
             // 
@@ -291,9 +302,9 @@ namespace QuanLy_DoAn_TNTH
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(21, 154);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(111, 13);
+            this.label8.Size = new System.Drawing.Size(113, 13);
             this.label8.TabIndex = 23;
-            this.label8.Text = "Mã giảng viên quản lý";
+            this.label8.Text = "Tên nhân viên quản lý";
             // 
             // comboBoxEdit4
             // 
@@ -411,16 +422,6 @@ namespace QuanLy_DoAn_TNTH
             this.label5.Size = new System.Drawing.Size(60, 13);
             this.label5.TabIndex = 5;
             this.label5.Text = "Tên thiết bị";
-            // 
-            // btIn
-            // 
-            this.btIn.Location = new System.Drawing.Point(419, 196);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(75, 23);
-            this.btIn.TabIndex = 42;
-            this.btIn.Text = "In";
-            this.btIn.UseVisualStyleBackColor = true;
-            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // US_dkPTN
             // 

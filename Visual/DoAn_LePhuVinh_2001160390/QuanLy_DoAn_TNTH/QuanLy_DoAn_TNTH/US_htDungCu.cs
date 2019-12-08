@@ -36,7 +36,7 @@ namespace QuanLy_DoAn_TNTH
         {
             SqlConnection sql = DBUtils.GetDBConnection();
             sql.Open();
-            SqlCommand cmd = new SqlCommand("select  dk2.MaDK_HCDC, dk1.MaNhom, dc.TenDC, dk2.SoLuong_DC " +
+            SqlCommand cmd = new SqlCommand("select  dk2.MaDK_HCDC, dk1.MaNhom, dc.MaDC, dc.TenDC, dk2.SoLuong_DKDC " +
                                             "from DK_HCDC as dk1, DK_DungCu as dk2, DungCu as dc " +
                                             "where dk1.MaDK_HCDC = dk2.MaDK_HCDC and dk2.MaDC = dc.MaDC and MaNhom LIKE '%" + txtMaNhom.Text + "%'", sql);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -49,14 +49,29 @@ namespace QuanLy_DoAn_TNTH
             DialogResult dr = MessageBox.Show("Bạn có muốn Xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
+                string ma = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                string dc = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[2].Value.ToString();
                 SqlConnection sql = DBUtils.GetDBConnection();
                 sql.Open();
-                SqlCommand cmd1 = new SqlCommand("delete from DK_DUNGCU where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
+                SqlCommand cmd1 = new SqlCommand($"delete from DK_DUNGCU where MaDK_HCDC = '{ma}' and MaDC = '{dc}'", sql);
                 cmd1.ExecuteNonQuery();
-                SqlCommand cmd2 = new SqlCommand("delete from DK_HoaChat where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
-                cmd2.ExecuteNonQuery();
-                SqlCommand cmd3 = new SqlCommand("delete from DK_HCDC where MaDK_HCDC = '" + dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString() + "'", sql);
-                cmd3.ExecuteNonQuery();
+                SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat where MaDK_HCDC = '{ma}'", sql);
+                SqlDataAdapter adap = new SqlDataAdapter(cm);
+                DataTable dt = new DataTable();
+                adap.Fill(dt);
+                string so = dt.Rows[0]["SoLuong"].ToString();
+                if (Int32.Parse(so) == 0)
+                {
+                    SqlCommand cmd3 = new SqlCommand($"delete from DK_HCDC where MaDK_HCDC = '{ma}'", sql);
+                    cmd3.ExecuteNonQuery();
+                }
+                else
+                {
+                    SqlCommand cmd3 = new SqlCommand($"delete from DK_HoaChat where MaDK_HCDC = '{ma}'", sql);
+                    cmd3.ExecuteNonQuery();
+                    cmd3 = new SqlCommand($"delete from DK_HCDC where MaDK_HCDC = '{ma}'", sql);
+                    cmd3.ExecuteNonQuery();
+                }
                 sql.Close();
                 MessageBox.Show("Xóa thành công");
                 LoaddataGridView();

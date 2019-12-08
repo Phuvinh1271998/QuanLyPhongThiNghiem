@@ -35,6 +35,7 @@ namespace QuanLy_DoAn_TNTH
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btIn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtMaDK_HCDC = new System.Windows.Forms.TextBox();
             this.btSua = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace QuanLy_DoAn_TNTH
             this.txtMaHC = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtTenHC = new System.Windows.Forms.TextBox();
-            this.btIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -136,6 +136,17 @@ namespace QuanLy_DoAn_TNTH
             this.groupControl2.TabIndex = 18;
             this.groupControl2.Text = "Đăng ký hóa chất";
             // 
+            // btIn
+            // 
+            this.btIn.Location = new System.Drawing.Point(447, 192);
+            this.btIn.Name = "btIn";
+            this.btIn.Size = new System.Drawing.Size(75, 39);
+            this.btIn.TabIndex = 38;
+            this.btIn.TabStop = false;
+            this.btIn.Text = "In";
+            this.btIn.UseVisualStyleBackColor = true;
+            this.btIn.Click += new System.EventHandler(this.btIn_Click);
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -186,9 +197,9 @@ namespace QuanLy_DoAn_TNTH
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(5, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 26;
-            this.label7.Text = "Mã GVQL";
+            this.label7.Text = "Mã NV";
             // 
             // button1
             // 
@@ -206,9 +217,9 @@ namespace QuanLy_DoAn_TNTH
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(352, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
+            this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Tên GVQL";
+            this.label6.Text = "Tên NV";
             // 
             // txtTenNhom
             // 
@@ -276,17 +287,6 @@ namespace QuanLy_DoAn_TNTH
             this.txtTenHC.Name = "txtTenHC";
             this.txtTenHC.Size = new System.Drawing.Size(157, 20);
             this.txtTenHC.TabIndex = 37;
-            // 
-            // btIn
-            // 
-            this.btIn.Location = new System.Drawing.Point(447, 192);
-            this.btIn.Name = "btIn";
-            this.btIn.Size = new System.Drawing.Size(75, 39);
-            this.btIn.TabIndex = 38;
-            this.btIn.TabStop = false;
-            this.btIn.Text = "In";
-            this.btIn.UseVisualStyleBackColor = true;
-            this.btIn.Click += new System.EventHandler(this.btIn_Click);
             // 
             // US_dkHoaChat
             // 
