@@ -29,7 +29,7 @@ namespace QuanLy_DoAn_TNTH
         }
         public void LoaddataGridView()
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cmd = new SqlCommand("select  *" +
                                             "from DK_PTN " +
@@ -49,7 +49,7 @@ namespace QuanLy_DoAn_TNTH
             DialogResult dr = MessageBox.Show("Bạn có muốn Xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
                 SqlCommand cmd = new SqlCommand("delete from DK_PTN where " +
                     "MaPTN = '" + dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[5].Value.ToString() + "'", sql);

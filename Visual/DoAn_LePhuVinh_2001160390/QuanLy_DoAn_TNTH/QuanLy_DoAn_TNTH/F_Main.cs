@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraReports.UI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -169,25 +168,17 @@ namespace QuanLy_DoAn_TNTH
                 US_dsDungCu.Instance.Dock = DockStyle.Fill;
                 US_dsDungCu.Instance.BringToFront();
             }
-            US_dsDungCu.Instance.BringToFront();
+            US_dsDungCu.Instance.BringToFront();            
         }
 
-        private void barButtonItem38_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void F_Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            rp_dkHoaChat rp = new rp_dkHoaChat();
-            rp.ShowPreview();
+
         }
 
-        private void barButtonItem39_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void F_Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //rp_dkPTN rp = new rp_dkPTN();
-            //rp.ShowPreview();
-        }
-
-        private void barButtonItem41_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            rp_dkDungCu rp = new rp_dkDungCu();
-            rp.ShowPreview();
+            Application.Exit();
         }
     }
 }

@@ -36,8 +36,8 @@ namespace QuanLy_DoAn_TNTH
 
         private void US_dkPTN_Load(object sender, EventArgs e)
         {
-            //-----------load nhom
-            SqlConnection sql = DBUtils.GetDBConnection();
+            //-----------load nhom              
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);
             sql.Open();
             SqlCommand cm = new SqlCommand("select MaNhom,TenNhom from NhomSV", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -100,7 +100,7 @@ namespace QuanLy_DoAn_TNTH
 
         public Boolean exedata(string cmd)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             Boolean check = false;
             try
@@ -118,37 +118,33 @@ namespace QuanLy_DoAn_TNTH
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaTB.Text.Trim() == "")
+            try
             {
-                MessageBox.Show("Chọn Thiết Bị !");
-                return;
-            }
-            if (txtSoLuong.Text.Trim() == "")
-            {
-                MessageBox.Show("Nhập số Lượng !");
-                return;
-            }
-            if (dateTimePicker.Value <= DateTime.Now)
-            {
-                MessageBox.Show("Nhập Ngày Khác !");
-                return;
-            }
-            string nhom = cbTenNhom.SelectedValue.ToString().Trim();
-            string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
-            DateTime ngay = dateTimePicker.Value;
-            string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
-            string phong = cbTenPhong.SelectedValue.ToString().Trim();
-            string buoi = cbBuoi.SelectedValue.ToString().Trim(); 
-            string tb = txtMaTB.Text.Trim();
-            int sl = Int32.Parse(txtSoLuong.Text.Trim());
+                string nhom = cbTenNhom.SelectedValue.ToString().Trim();
+                string loai = cbLoaiTN.SelectedValue.ToString().Trim(); ;
+                DateTime ngay = dateTimePicker.Value;
+                string gv = cbTenGV.SelectedValue.ToString().Trim(); ;
+                string phong = cbTenPhong.SelectedValue.ToString().Trim();
+                string buoi = cbBuoi.SelectedValue.ToString().Trim();
+                string tb = txtMaTB.Text.Trim();
+                int sl = Int32.Parse(txtSoLuong.Text.Trim());
 
-            if (!exedata($"exec DKPTN '{ngay}','{buoi}','{nhom}','{gv}','{loai}','{phong}','{tb}',{sl};"))
-                MessageBox.Show("Có Lỗi !");
-            else
-                MessageBox.Show("Thành công !");
+                if (!exedata($"exec DKPTN '{ngay}','{buoi}','{nhom}','{gv}','{loai}','{phong}','{tb}',{sl};"))
+                {
+                    MessageBox.Show("Có Lỗi !");
+                    return;
+                }
+                else
+                    MessageBox.Show("Thành công !");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Điền đủ thông tin !");
+                return;
+            }
 
             //-------------------grid TB
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -178,7 +174,7 @@ namespace QuanLy_DoAn_TNTH
                         MessageBox.Show("Có Lỗi !");
                     else
                         MessageBox.Show("Thành công !");
-                    SqlConnection sql = DBUtils.GetDBConnection();
+                    SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                     sql.Open();
                     SqlCommand cm = new SqlCommand("select * from DK_PTN", sql);
                     SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -223,7 +219,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             if (this.dataGridView2.SelectedRows.Count > 0)
             {
@@ -269,8 +265,8 @@ namespace QuanLy_DoAn_TNTH
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            //rp_dkPTN rp = new rp_dkPTN();
-            //rp.ShowPreview();
+            rp_dkPTN rp = new rp_dkPTN();
+            rp.ShowPreview();
         }
 
         private void cbBuoi_SelectedIndexChanged(object sender, EventArgs e)

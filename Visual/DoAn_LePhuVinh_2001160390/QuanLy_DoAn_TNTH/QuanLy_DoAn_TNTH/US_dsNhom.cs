@@ -29,15 +29,15 @@ namespace QuanLy_DoAn_TNTH
         }
         private void US_dsNhom_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);
+            sql.Open();
             string str = "select SinhVien.MaNhom,NhomSV.TenNhom,COUNT(SinhVien.MaNhom) as SoLuong from NhomSV, SinhVien where SinhVien.MaNhom = NhomSV.MaNhom group by NhomSV.TenNhom,SinhVien.MaNhom";
-            SqlCommand cmd = new SqlCommand(str, conn);
+            SqlCommand cmd = new SqlCommand(str, sql);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView_Nhom.DataSource = dt;
-            conn.Close();
+            sql.Close();
         }
     }
 }

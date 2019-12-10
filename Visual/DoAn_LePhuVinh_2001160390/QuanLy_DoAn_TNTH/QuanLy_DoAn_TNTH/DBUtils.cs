@@ -9,14 +9,12 @@ namespace QuanLy_DoAn_TNTH
 {
     class DBUtils
     {
-        public static SqlConnection GetDBConnection()
+        public DBUtils() 
         {
-            string datasource = @"DESKTOP-UKGCLUB\VINHLEPC";
-
-            string database = "DAMH";
-            string username = "sa";
-            string password = "1";
-
+        
+        }
+        public static SqlConnection GetDBConnection(string datasource, string database, string username, string password)
+        {
             return DBSQLServerUtils.GetDBConnection(datasource, database, username, password);
         }
     }

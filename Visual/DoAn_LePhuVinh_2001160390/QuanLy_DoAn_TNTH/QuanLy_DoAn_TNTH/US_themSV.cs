@@ -35,7 +35,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void US_themSV_Load(object sender, EventArgs e)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cm = new SqlCommand("select MaNhom,TenNhom from NhomSV", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -68,7 +68,7 @@ namespace QuanLy_DoAn_TNTH
 
         public Boolean exedata(string cmd)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             Boolean check = false;
             try
@@ -95,7 +95,7 @@ namespace QuanLy_DoAn_TNTH
                 int namhoc = Int32.Parse(txtNamHoc.Text.Trim()); ;
                 string manhom = cbTenNhom.SelectedValue.ToString().Trim();
                 string malop = cbLop.SelectedValue.ToString().Trim();
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
                 SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from SinhVien where MaNhom = '{manhom}'", sql);
                 SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -139,7 +139,7 @@ namespace QuanLy_DoAn_TNTH
                     MessageBox.Show("Có Lỗi !");
                 else
                     MessageBox.Show("Thành công !");
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();                
                 SqlCommand cm = new SqlCommand("select * from SinhVien", sql);
                 SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -172,7 +172,7 @@ namespace QuanLy_DoAn_TNTH
         {
             try
             {
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
                 if (this.dataGridView1.SelectedRows.Count > 0)
                 {

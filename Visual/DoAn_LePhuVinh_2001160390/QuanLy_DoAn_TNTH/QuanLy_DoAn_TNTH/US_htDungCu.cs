@@ -34,7 +34,7 @@ namespace QuanLy_DoAn_TNTH
         }
         public void LoaddataGridView()
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cmd = new SqlCommand("select  dk2.MaDK_HCDC, dk1.MaNhom, dc.MaDC, dc.TenDC, dk2.SoLuong_DKDC " +
                                             "from DK_HCDC as dk1, DK_DungCu as dk2, DungCu as dc " +
@@ -51,7 +51,7 @@ namespace QuanLy_DoAn_TNTH
             {
                 string ma = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 string dc = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[2].Value.ToString();
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
                 SqlCommand cmd1 = new SqlCommand($"delete from DK_DUNGCU where MaDK_HCDC = '{ma}' and MaDC = '{dc}'", sql);
                 cmd1.ExecuteNonQuery();

@@ -16,7 +16,7 @@ namespace QuanLy_DoAn_TNTH
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new F_Main());
+            Application.Run(new F_DangNhap());
         }
     }
 }
