@@ -53,6 +53,16 @@ namespace QuanLy_DoAn_TNTH
             else if (!IsServerConnected(conn))
             {
                 MessageBox.Show("Login failed !");
+                return;
+            }
+            if (id == "sv")
+            {
+                Id = txtTenDN.Text;
+                Mk = txtMatKhau.Text;
+                Sr = txtServer.Text;
+                this.Hide();
+                F_Show show = new F_Show();
+                show.Show();
             }
             else
             {
