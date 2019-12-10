@@ -12,10 +12,9 @@
               <DbSource ConnectionRef="DAMHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        dk1.MaDK_HCDC, dk1.MaNhom, dk1.MaGVQL, dk2.MaHC, dk2.SoLuong_HC
+                    <CommandText>SELECT        dk1.MaDK_HCDC, dk1.MaNV, dk1.MaNhom, dk2.MaDC, dk2.SoLuong_DKDC
 FROM            DK_HCDC AS dk1 INNER JOIN
-                         DK_HoaChat AS dk2 ON dk1.MaDK_HCDC = dk2.MaDK_HCDC INNER JOIN
-                         HoaChat AS hc ON dk2.MaHC = hc.MaHC</CommandText>
+                         DK_DungCu AS dk2 ON dk1.MaDK_HCDC = dk2.MaDK_HCDC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -23,10 +22,10 @@ FROM            DK_HCDC AS dk1 INNER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="MaDK_HCDC" DataSetColumn="MaDK_HCDC" />
+              <Mapping SourceColumn="MaNV" DataSetColumn="MaNV" />
               <Mapping SourceColumn="MaNhom" DataSetColumn="MaNhom" />
-              <Mapping SourceColumn="MaGVQL" DataSetColumn="MaGVQL" />
-              <Mapping SourceColumn="MaHC" DataSetColumn="MaHC" />
-              <Mapping SourceColumn="SoLuong_HC" DataSetColumn="SoLuong_HC" />
+              <Mapping SourceColumn="MaDC" DataSetColumn="MaDC" />
+              <Mapping SourceColumn="SoLuong_DKDC" DataSetColumn="SoLuong_DKDC" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -35,10 +34,9 @@ FROM            DK_HCDC AS dk1 INNER JOIN
               <DbSource ConnectionRef="DAMHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        dk1.MaDK_HCDC, dk1.MaNhom, dk1.MaGVQL, dk2.MaDC, dk2.SoLuong_DC
+                    <CommandText>SELECT        dk1.MaDK_HCDC, dk1.MaNV, dk1.MaNhom, dk2.MaHC, dk2.SoLuong_DKHC
 FROM            DK_HCDC AS dk1 INNER JOIN
-                         DK_DungCu AS dk2 ON dk1.MaDK_HCDC = dk2.MaDK_HCDC INNER JOIN
-                         DungCu AS dc ON dk2.MaDC = dc.MaDC</CommandText>
+                         DK_HoaChat AS dk2 ON dk1.MaDK_HCDC = dk2.MaDK_HCDC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -46,36 +44,10 @@ FROM            DK_HCDC AS dk1 INNER JOIN
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="MaDK_HCDC" DataSetColumn="MaDK_HCDC" />
+              <Mapping SourceColumn="MaNV" DataSetColumn="MaNV" />
               <Mapping SourceColumn="MaNhom" DataSetColumn="MaNhom" />
-              <Mapping SourceColumn="MaGVQL" DataSetColumn="MaGVQL" />
-              <Mapping SourceColumn="MaDC" DataSetColumn="MaDC" />
-              <Mapping SourceColumn="SoLuong_DC" DataSetColumn="SoLuong_DC" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable3TableAdapter" GeneratorDataComponentClassName="DataTable3TableAdapter" Name="DataTable3" UserDataComponentName="DataTable3TableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="DAMHConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        dk.MaPTN, dk.MaNhom, dk.MaGVQL, dk.NgayDK, b.Mota, dk.MaTB, dk.SoLuongTB, l.TenLoai
-FROM            DK_PTN AS dk INNER JOIN
-                         Buoi AS b ON dk.MaBuoi = b.MaBuoi INNER JOIN
-                         Loai_TN AS l ON dk.MaloaiTN = l.MaloaiTN</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="MaPTN" DataSetColumn="MaPTN" />
-              <Mapping SourceColumn="MaNhom" DataSetColumn="MaNhom" />
-              <Mapping SourceColumn="MaGVQL" DataSetColumn="MaGVQL" />
-              <Mapping SourceColumn="NgayDK" DataSetColumn="NgayDK" />
-              <Mapping SourceColumn="Mota" DataSetColumn="Mota" />
-              <Mapping SourceColumn="MaTB" DataSetColumn="MaTB" />
-              <Mapping SourceColumn="SoLuongTB" DataSetColumn="SoLuongTB" />
-              <Mapping SourceColumn="TenLoai" DataSetColumn="TenLoai" />
+              <Mapping SourceColumn="MaHC" DataSetColumn="MaHC" />
+              <Mapping SourceColumn="SoLuong_DKHC" DataSetColumn="SoLuong_DKHC" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -97,35 +69,7 @@ FROM            DK_PTN AS dk INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaNhom" msprop:Generator_ColumnVarNameInTable="columnMaNhom" msprop:Generator_ColumnPropNameInRow="MaNhom" msprop:Generator_ColumnPropNameInTable="MaNhomColumn" msprop:Generator_UserColumnName="MaNhom">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MaGVQL" msprop:Generator_ColumnVarNameInTable="columnMaGVQL" msprop:Generator_ColumnPropNameInRow="MaGVQL" msprop:Generator_ColumnPropNameInTable="MaGVQLColumn" msprop:Generator_UserColumnName="MaGVQL">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MaHC" msprop:Generator_ColumnVarNameInTable="columnMaHC" msprop:Generator_ColumnPropNameInRow="MaHC" msprop:Generator_ColumnPropNameInTable="MaHCColumn" msprop:Generator_UserColumnName="MaHC">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SoLuong_HC" msprop:Generator_ColumnVarNameInTable="columnSoLuong_HC" msprop:Generator_ColumnPropNameInRow="SoLuong_HC" msprop:Generator_ColumnPropNameInTable="SoLuong_HCColumn" msprop:Generator_UserColumnName="SoLuong_HC" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="MaDK_HCDC" msprop:Generator_ColumnVarNameInTable="columnMaDK_HCDC" msprop:Generator_ColumnPropNameInRow="MaDK_HCDC" msprop:Generator_ColumnPropNameInTable="MaDK_HCDCColumn" msprop:Generator_UserColumnName="MaDK_HCDC">
+              <xs:element name="MaNV" msprop:Generator_ColumnVarNameInTable="columnMaNV" msprop:Generator_ColumnPropNameInRow="MaNV" msprop:Generator_ColumnPropNameInTable="MaNVColumn" msprop:Generator_UserColumnName="MaNV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -133,13 +77,6 @@ FROM            DK_PTN AS dk INNER JOIN
                 </xs:simpleType>
               </xs:element>
               <xs:element name="MaNhom" msprop:Generator_ColumnVarNameInTable="columnMaNhom" msprop:Generator_ColumnPropNameInRow="MaNhom" msprop:Generator_ColumnPropNameInTable="MaNhomColumn" msprop:Generator_UserColumnName="MaNhom">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MaGVQL" msprop:Generator_ColumnVarNameInTable="columnMaGVQL" msprop:Generator_ColumnPropNameInRow="MaGVQL" msprop:Generator_ColumnPropNameInTable="MaGVQLColumn" msprop:Generator_UserColumnName="MaGVQL">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -153,14 +90,21 @@ FROM            DK_PTN AS dk INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="SoLuong_DC" msprop:Generator_ColumnVarNameInTable="columnSoLuong_DC" msprop:Generator_ColumnPropNameInRow="SoLuong_DC" msprop:Generator_ColumnPropNameInTable="SoLuong_DCColumn" msprop:Generator_UserColumnName="SoLuong_DC" type="xs:int" minOccurs="0" />
+              <xs:element name="SoLuong_DKDC" msprop:Generator_ColumnVarNameInTable="columnSoLuong_DKDC" msprop:Generator_ColumnPropNameInRow="SoLuong_DKDC" msprop:Generator_ColumnPropNameInTable="SoLuong_DKDCColumn" msprop:Generator_UserColumnName="SoLuong_DKDC" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable3" msprop:Generator_TableClassName="DataTable3DataTable" msprop:Generator_TableVarName="tableDataTable3" msprop:Generator_TablePropName="DataTable3" msprop:Generator_RowDeletingName="DataTable3RowDeleting" msprop:Generator_RowChangingName="DataTable3RowChanging" msprop:Generator_RowEvHandlerName="DataTable3RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable3RowDeleted" msprop:Generator_UserTableName="DataTable3" msprop:Generator_RowChangedName="DataTable3RowChanged" msprop:Generator_RowEvArgName="DataTable3RowChangeEvent" msprop:Generator_RowClassName="DataTable3Row">
+        <xs:element name="DataTable2" msprop:Generator_TableClassName="DataTable2DataTable" msprop:Generator_TableVarName="tableDataTable2" msprop:Generator_TablePropName="DataTable2" msprop:Generator_RowDeletingName="DataTable2RowDeleting" msprop:Generator_RowChangingName="DataTable2RowChanging" msprop:Generator_RowEvHandlerName="DataTable2RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable2RowDeleted" msprop:Generator_UserTableName="DataTable2" msprop:Generator_RowChangedName="DataTable2RowChanged" msprop:Generator_RowEvArgName="DataTable2RowChangeEvent" msprop:Generator_RowClassName="DataTable2Row">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaPTN" msprop:Generator_ColumnVarNameInTable="columnMaPTN" msprop:Generator_ColumnPropNameInRow="MaPTN" msprop:Generator_ColumnPropNameInTable="MaPTNColumn" msprop:Generator_UserColumnName="MaPTN">
+              <xs:element name="MaDK_HCDC" msprop:Generator_ColumnVarNameInTable="columnMaDK_HCDC" msprop:Generator_ColumnPropNameInRow="MaDK_HCDC" msprop:Generator_ColumnPropNameInTable="MaDK_HCDCColumn" msprop:Generator_UserColumnName="MaDK_HCDC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MaNV" msprop:Generator_ColumnVarNameInTable="columnMaNV" msprop:Generator_ColumnPropNameInRow="MaNV" msprop:Generator_ColumnPropNameInTable="MaNVColumn" msprop:Generator_UserColumnName="MaNV">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -174,36 +118,14 @@ FROM            DK_PTN AS dk INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MaGVQL" msprop:Generator_ColumnVarNameInTable="columnMaGVQL" msprop:Generator_ColumnPropNameInRow="MaGVQL" msprop:Generator_ColumnPropNameInTable="MaGVQLColumn" msprop:Generator_UserColumnName="MaGVQL">
+              <xs:element name="MaHC" msprop:Generator_ColumnVarNameInTable="columnMaHC" msprop:Generator_ColumnPropNameInRow="MaHC" msprop:Generator_ColumnPropNameInTable="MaHCColumn" msprop:Generator_UserColumnName="MaHC">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NgayDK" msprop:Generator_ColumnVarNameInTable="columnNgayDK" msprop:Generator_ColumnPropNameInRow="NgayDK" msprop:Generator_ColumnPropNameInTable="NgayDKColumn" msprop:Generator_UserColumnName="NgayDK" type="xs:dateTime" />
-              <xs:element name="Mota" msprop:Generator_ColumnVarNameInTable="columnMota" msprop:Generator_ColumnPropNameInRow="Mota" msprop:Generator_ColumnPropNameInTable="MotaColumn" msprop:Generator_UserColumnName="Mota" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MaTB" msprop:Generator_ColumnVarNameInTable="columnMaTB" msprop:Generator_ColumnPropNameInRow="MaTB" msprop:Generator_ColumnPropNameInTable="MaTBColumn" msprop:Generator_UserColumnName="MaTB">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="SoLuongTB" msprop:Generator_ColumnVarNameInTable="columnSoLuongTB" msprop:Generator_ColumnPropNameInRow="SoLuongTB" msprop:Generator_ColumnPropNameInTable="SoLuongTBColumn" msprop:Generator_UserColumnName="SoLuongTB" type="xs:int" minOccurs="0" />
-              <xs:element name="TenLoai" msprop:Generator_ColumnVarNameInTable="columnTenLoai" msprop:Generator_ColumnPropNameInRow="TenLoai" msprop:Generator_ColumnPropNameInTable="TenLoaiColumn" msprop:Generator_UserColumnName="TenLoai" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="SoLuong_DKHC" msprop:Generator_ColumnVarNameInTable="columnSoLuong_DKHC" msprop:Generator_ColumnPropNameInRow="SoLuong_DKHC" msprop:Generator_ColumnPropNameInTable="SoLuong_DKHCColumn" msprop:Generator_UserColumnName="SoLuong_DKHC" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

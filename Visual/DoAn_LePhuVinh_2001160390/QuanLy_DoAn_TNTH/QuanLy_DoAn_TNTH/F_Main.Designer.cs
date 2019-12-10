@@ -105,6 +105,15 @@
             this.ribbonPage15 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup23 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup24 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageCategory4 = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
+            this.ribbonPage10 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup16 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPage11 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup17 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem38 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem39 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem40 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem41 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -226,17 +235,22 @@
             this.barButtonItem34,
             this.barButtonItem35,
             this.barButtonItem36,
-            this.barButtonItem37});
+            this.barButtonItem37,
+            this.barButtonItem38,
+            this.barButtonItem39,
+            this.barButtonItem40,
+            this.barButtonItem41});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 41;
+            this.ribbonControl1.MaxItemId = 45;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.ribbonPageCategory1,
             this.ribbonPageCategory2,
-            this.ribbonPageCategory3});
+            this.ribbonPageCategory3,
+            this.ribbonPageCategory4});
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage15});
-            this.ribbonControl1.Size = new System.Drawing.Size(1042, 141);
+            this.ribbonControl1.Size = new System.Drawing.Size(1052, 141);
             // 
             // barButtonItem1
             // 
@@ -548,7 +562,7 @@
             this.ribbonPageCategory1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage7,
             this.ribbonPage8});
-            this.ribbonPageCategory1.Text = "Quản lý đề tài";
+            this.ribbonPageCategory1.Text = "Quản lý thông tin đồ án";
             // 
             // ribbonPage7
             // 
@@ -688,11 +702,78 @@
             this.ribbonPageGroup24.ItemLinks.Add(this.barButtonItem26);
             this.ribbonPageGroup24.Name = "ribbonPageGroup24";
             // 
+            // ribbonPageCategory4
+            // 
+            this.ribbonPageCategory4.Name = "ribbonPageCategory4";
+            this.ribbonPageCategory4.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage10,
+            this.ribbonPage11});
+            this.ribbonPageCategory4.Text = "Thống kê - báo cáo";
+            // 
+            // ribbonPage10
+            // 
+            this.ribbonPage10.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup16});
+            this.ribbonPage10.Name = "ribbonPage10";
+            this.ribbonPage10.Text = "Danh sách đăng ký hóa chất - dụng cụ";
+            // 
+            // ribbonPageGroup16
+            // 
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem38);
+            this.ribbonPageGroup16.ItemLinks.Add(this.barButtonItem41);
+            this.ribbonPageGroup16.Name = "ribbonPageGroup16";
+            this.ribbonPageGroup16.Text = "Công việc";
+            // 
+            // ribbonPage11
+            // 
+            this.ribbonPage11.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup17});
+            this.ribbonPage11.Name = "ribbonPage11";
+            this.ribbonPage11.Text = "Danh sách đăng ký phòng - thiết bị";
+            // 
+            // ribbonPageGroup17
+            // 
+            this.ribbonPageGroup17.ItemLinks.Add(this.barButtonItem39);
+            this.ribbonPageGroup17.Name = "ribbonPageGroup17";
+            this.ribbonPageGroup17.Text = "Công việc";
+            // 
+            // barButtonItem38
+            // 
+            this.barButtonItem38.Caption = "In danh sách đăng ký hóa chất";
+            this.barButtonItem38.Id = 41;
+            this.barButtonItem38.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem38.ImageOptions.Image")));
+            this.barButtonItem38.Name = "barButtonItem38";
+            this.barButtonItem38.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem38.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem38_ItemClick);
+            // 
+            // barButtonItem39
+            // 
+            this.barButtonItem39.Caption = "In danh sách đăng ký phòng - thiết bị";
+            this.barButtonItem39.Id = 42;
+            this.barButtonItem39.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem39.ImageOptions.Image")));
+            this.barButtonItem39.Name = "barButtonItem39";
+            this.barButtonItem39.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem39.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem39_ItemClick);
+            // 
+            // barButtonItem40
+            // 
+            this.barButtonItem40.Id = 43;
+            this.barButtonItem40.Name = "barButtonItem40";
+            // 
+            // barButtonItem41
+            // 
+            this.barButtonItem41.Caption = "In danh sách đăng ký dụng cụ";
+            this.barButtonItem41.Id = 44;
+            this.barButtonItem41.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem41.ImageOptions.Image")));
+            this.barButtonItem41.Name = "barButtonItem41";
+            this.barButtonItem41.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem41.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem41_ItemClick);
+            // 
             // F_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 450);
+            this.ClientSize = new System.Drawing.Size(1052, 450);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "F_Main";
             this.Text = "Hệ thống quản lý đồ án trung tâm thí nghiệm";
@@ -782,5 +863,14 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem36;
         private DevExpress.XtraBars.BarButtonItem barButtonItem37;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem38;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem39;
+        private DevExpress.XtraBars.Ribbon.RibbonPageCategory ribbonPageCategory4;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup16;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage11;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem40;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem41;
     }
 }

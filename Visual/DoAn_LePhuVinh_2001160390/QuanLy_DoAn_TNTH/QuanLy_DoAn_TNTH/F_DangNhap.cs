@@ -46,7 +46,7 @@ namespace QuanLy_DoAn_TNTH
             string conn = $"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }";
             if (id == "" | mk == "")
                 MessageBox.Show("Fill all fields !");
-            else if (!IsServerConnected($"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }")) ;
+            else if (!IsServerConnected($"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }")) { }
             else if (!IsServerConnected(conn))
             {
                 MessageBox.Show("Login failed !");

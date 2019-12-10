@@ -100,9 +100,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="DAMH.cs">
-      <DependentUpon>DAMH.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DAMH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -135,12 +132,6 @@
     </Compile>
     <Compile Include="rp_dkHoaChat.Designer.cs">
       <DependentUpon>rp_dkHoaChat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="rp_dkPTN.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="rp_dkPTN.Designer.cs">
-      <DependentUpon>rp_dkPTN.cs</DependentUpon>
     </Compile>
     <Compile Include="US_dkDungCu.cs">
       <SubType>UserControl</SubType>
@@ -242,9 +233,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="rp_dkHoaChat.resx">
       <DependentUpon>rp_dkHoaChat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="rp_dkPTN.resx">
-      <DependentUpon>rp_dkPTN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="US_dkDungCu.resx">
       <DependentUpon>US_dkDungCu.cs</DependentUpon>

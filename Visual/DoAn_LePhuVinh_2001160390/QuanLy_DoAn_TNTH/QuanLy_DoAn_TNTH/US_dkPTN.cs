@@ -269,8 +269,8 @@ namespace QuanLy_DoAn_TNTH
 
         private void btIn_Click(object sender, EventArgs e)
         {
-            rp_dkPTN rp = new rp_dkPTN();
-            rp.ShowPreview();
+            //rp_dkPTN rp = new rp_dkPTN();
+            //rp.ShowPreview();
         }
 
         private void cbBuoi_SelectedIndexChanged(object sender, EventArgs e)
