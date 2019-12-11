@@ -31,7 +31,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void cbbMaNhom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);
             sql.Open();
             SqlCommand cm = new SqlCommand("select * from NhomSV", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -43,7 +43,7 @@ namespace QuanLy_DoAn_TNTH
         private void US_dkDungCu_Load(object sender, EventArgs e)
         {
             //-----------------Nhom
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cm = new SqlCommand("select * from NhomSV", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -80,7 +80,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void load2()
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cm = new SqlCommand("select* from DungCu", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -91,7 +91,7 @@ namespace QuanLy_DoAn_TNTH
         }
         public void LoaddataGridView()
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             string str = "select dk1.MaDK_HCDC, MaNhom, MaNV, dk2.MaDC, hc.TenDC, SoLuong_DKDC from DK_HCDC as dk1, DK_DungCu as dk2, DungCu as hc where dk1.MaDK_HCDC = dk2.MaDK_HCDC and dk2.MaDC = hc.MaDC";
             SqlCommand cmd = new SqlCommand(str, sql);
@@ -104,7 +104,7 @@ namespace QuanLy_DoAn_TNTH
 
         private void cbbTenGVQL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlCommand cm = new SqlCommand("select * from NhanVien", sql);
             SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -115,7 +115,7 @@ namespace QuanLy_DoAn_TNTH
 
         public string MaDK_HCDC()
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             SqlDataAdapter da = new SqlDataAdapter("select MaDK_HCDC from DK_HCDC", sql);
             DataTable dt = new DataTable();
@@ -150,7 +150,7 @@ namespace QuanLy_DoAn_TNTH
 
         public Boolean exedata(string cmd)
         {
-            SqlConnection sql = DBUtils.GetDBConnection();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
             sql.Open();
             Boolean check = false;
             try
@@ -213,7 +213,7 @@ namespace QuanLy_DoAn_TNTH
             {
                 string ma = dataGridView.Rows[dataGridView.CurrentCell.RowIndex].Cells[0].Value.ToString();
                 string MDC = txtMaDC.Text;
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
                 SqlCommand cm = new SqlCommand($"select count(*) as SoLuong from DK_HoaChat,DK_DungCu where DK_DungCu.MaDK_HCDC = '{ma}' group by DK_DungCu.MaDK_HCDC,DK_HoaChat.MaDK_HCDC", sql);
                 SqlDataAdapter adap = new SqlDataAdapter(cm);
@@ -279,7 +279,7 @@ namespace QuanLy_DoAn_TNTH
                 dataGridView1.Enabled = true;
                 dataGridView.Enabled = true;
                 btnLuu.Enabled = false;
-                SqlConnection sql = DBUtils.GetDBConnection();
+                SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);;
                 sql.Open();
 
                 SqlCommand cmd2 = new SqlCommand("update DK_HCDC set MaNhom='" + cbbMaNhom.Text + "', MaNV='" + txtMaGVQL.Text + "' where MaDK_HCDC = '" + txtMaDK_HCDC.Text + "'", sql);

@@ -34,31 +34,44 @@ namespace QuanLy_DoAn_TNTH
                 }
             }
         }
+        public static string Id;
+        public static string Mk;
+        public static string Sr;
 
-
-        public static string SetValueForConn = "";
         private void btDangNhap_Click(object sender, EventArgs e)
         {
 
             string id = txtTenDN.Text;
             string mk = txtMatKhau.Text;
-            string server = "DESKTOP-UKGCLUB\\VINHLEPC";
+            string server = txtServer.Text;            
             string conn = $"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }";
-            if (id == "" | mk == "")
+            if (id == "" | mk == "" | server == "")
+            {
                 MessageBox.Show("Fill all fields !");
-            else if (!IsServerConnected($"Data Source={ server };Initial Catalog=DAMH;User ID={ id };Password={ mk }")) { MessageBox.Show("Login success"); }
+                return;
+            }
             else if (!IsServerConnected(conn))
             {
                 MessageBox.Show("Login failed !");
+                return;
+            }
+            if (id == "sv")
+            {
+                Id = txtTenDN.Text;
+                Mk = txtMatKhau.Text;
+                Sr = txtServer.Text;
+                this.Hide();
+                F_Show show = new F_Show();
+                show.Show();
             }
             else
             {
-                SqlConnection con = new SqlConnection($"Data Source={server};Initial Catalog=DAMH;User ID={id};Password={mk}");
-                this.Visible = false;
-                SetValueForConn = conn;
+                Id = txtTenDN.Text;
+                Mk = txtMatKhau.Text;
+                Sr = txtServer.Text;
+                this.Hide();
                 F_Main main = new F_Main();
                 main.Show();
-                this.Visible = false;
             }
         }
 

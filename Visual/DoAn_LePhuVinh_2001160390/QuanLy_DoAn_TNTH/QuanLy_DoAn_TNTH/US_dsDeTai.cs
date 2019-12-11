@@ -30,15 +30,15 @@ namespace QuanLy_DoAn_TNTH
 
         private void US_dsDeTai_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = DBUtils.GetDBConnection();
-            conn.Open();
+            SqlConnection sql = DBUtils.GetDBConnection(F_DangNhap.Sr,"DAMH",F_DangNhap.Id,F_DangNhap.Mk);
+            sql.Open();
             string str = "select * from DEAN";           
-            SqlCommand cmd = new SqlCommand(str, conn);
+            SqlCommand cmd = new SqlCommand(str, sql);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView_DeTai.DataSource = dt;
-            conn.Close();           
+            sql.Close();           
         }
     }
 }
